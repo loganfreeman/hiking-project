@@ -68,8 +68,9 @@
     </div>
 </div>
 <br>
-
+<div class="markdown-body">
 {!! $post->content !!}
+</div>
 <br><hr>
 
 <h3>Comments</h3>

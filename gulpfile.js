@@ -11,6 +11,7 @@ elixir.config.sourcemaps = false;
 
 elixir(function (mix) {
     mix.copy('resources/assets/css/bootstrap.*.min.css', stylesPath);
+    mix.copy('resources/assets/css/github-markdown.css', stylesPath);
     mix.styles(['bootstrap.min.css'], stylesPath + 'bootstrap.default.min.css');
     mix.styles(['bootstrap.min.css', 'bootstrap-theme.min.css'], stylesPath + 'bootstrap.legacy.min.css');
 
