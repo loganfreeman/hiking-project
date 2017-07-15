@@ -38,6 +38,8 @@ if (Config::get('cms.blogging')) {
     }]);
 }
 
+$router->post('search/posts', ['as' => 'search_posts', 'uses' => 'PostController@search']);
+
 // page routes
 $router->resource('pages', 'PageController');
 

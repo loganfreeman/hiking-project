@@ -43,6 +43,10 @@ class PostController extends AbstractController
         parent::__construct();
     }
 
+    public function search() {
+      return View::make('posts.search');
+    }
+
     /**
      * Display a listing of the posts.
      *
