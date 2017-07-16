@@ -95,6 +95,10 @@ class Post extends AbstractModel implements HasPresenter
         'user_id' => 'required',
     ];
 
+    public static function search($term) {
+      return static::where('title', 'like', '%' . $term . '%')->get();
+    }
+
     /**
      * Get the presenter class.
      *

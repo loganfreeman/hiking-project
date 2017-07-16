@@ -17,6 +17,7 @@ use GrahamCampbell\Credentials\Facades\Credentials;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Http\Request;
 
 /**
  * This is the post controller class.
@@ -43,8 +44,14 @@ class PostController extends AbstractController
         parent::__construct();
     }
 
-    public function search() {
-      return View::make('posts.search');
+    public function search(Request $request) {
+      $term = $request->input('srch-term');
+      $post = PostRepository::find($term);
+      $this->checkPost($post);
+
+      $comments = $post->comments()->orderBy('id', 'desc')->get();
+
+      return View::make('posts.show', ['post' => $post, 'comments' => $comments]);
     }
 
     /**

@@ -22,4 +22,8 @@ use GrahamCampbell\Credentials\Repositories\PaginateRepositoryTrait;
 class PostRepository extends AbstractRepository
 {
     use PaginateRepositoryTrait;
+
+    public function search($term) {
+      
+    }
 }
