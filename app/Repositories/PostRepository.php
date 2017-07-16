@@ -24,6 +24,7 @@ class PostRepository extends AbstractRepository
     use PaginateRepositoryTrait;
 
     public function search($term) {
-      
+      $model = $this->model;
+      return $model::search($term);
     }
 }
