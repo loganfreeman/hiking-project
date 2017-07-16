@@ -46,12 +46,8 @@ class PostController extends AbstractController
 
     public function search(Request $request) {
       $term = $request->input('srch-term');
-      $post = PostRepository::find($term);
-      $this->checkPost($post);
-
-      $comments = $post->comments()->orderBy('id', 'desc')->get();
-
-      return View::make('posts.show', ['post' => $post, 'comments' => $comments]);
+      $posts = PostRepository::search($term);
+      return View::make('posts.index', ['posts' => $posts]);
     }
 
     /**

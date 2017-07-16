@@ -43,7 +43,9 @@ Blog
     </p>
     <br>
 @endforeach
+@if (isset($links))
 {!! $links !!}
+@endif
 @stop
 
 @section('bottom')
