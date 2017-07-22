@@ -20,6 +20,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Http\Request;
 use GrahamCampbell\BootstrapCMS\Models\Like;
 use Illuminate\Support\Facades\Response;
+use Exception;
 
 
 /**
