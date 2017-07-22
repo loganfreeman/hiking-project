@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Http\Request;
+use GrahamCampbell\BootstrapCMS\Models\Like;
+use Illuminate\Support\Facades\Response;
+
 
 /**
  * This is the post controller class.
@@ -183,6 +186,44 @@ class PostController extends AbstractController
     {
         if (!$post) {
             throw new NotFoundHttpException('Post Not Found');
+        }
+    }
+
+
+    public function isLikedByMe($id)
+    {
+
+        if(is_null($id)) {
+          throw new Exception('No post ID provided');
+        }
+        $post = PostRepository::find($id);
+        if(is_null($post)) {
+          throw new Exception('No post found with ID ' . $id);
+        }
+        $data = false;
+        $userId = Credentials::getuser()->id;
+        if (Like::whereUserId($userId)->wherePostId($post->id)->exists()){
+            $data = true;
+        }
+        return Response::json($data);
+    }
+
+    public function like(Post $post)
+    {
+        $userId = Credentials::getuser()->id;
+        $existing_like = Like::wherePostId($post->id)->whereUserId($userId)->first();
+
+        if (is_null($existing_like)) {
+            Like::create([
+                'post_id' => $post->id,
+                'user_id' => $userId
+            ]);
+        } else {
+            if (is_null($existing_like->deleted_at)) {
+                $existing_like->delete();
+            } else {
+                $existing_like->restore();
+            }
         }
     }
 }

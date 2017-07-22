@@ -12,6 +12,7 @@
 namespace GrahamCampbell\BootstrapCMS\Models;
 
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyCommentsTrait;
+use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToManyUsersTrait;
 use GrahamCampbell\Credentials\Models\AbstractModel;
 use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
@@ -25,7 +26,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Post extends AbstractModel implements HasPresenter
 {
-    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes;
+    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes, BelongsToManyUsersTrait;
 
     /**
      * The table the posts are stored in.
@@ -118,4 +119,5 @@ class Post extends AbstractModel implements HasPresenter
     {
         $this->deleteComments();
     }
+
 }

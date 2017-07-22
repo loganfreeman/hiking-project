@@ -12,6 +12,7 @@
 namespace GrahamCampbell\BootstrapCMS\Models;
 
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyCommentsTrait;
+use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToManyPostsTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyEventsTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyPagesTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyPostsTrait;
@@ -24,7 +25,7 @@ use GrahamCampbell\Credentials\Models\User as CredentialsUser;
  */
 class User extends CredentialsUser
 {
-    use HasManyPagesTrait, HasManyPostsTrait, HasManyEventsTrait, HasManyCommentsTrait;
+    use HasManyPagesTrait, HasManyPostsTrait, HasManyEventsTrait, HasManyCommentsTrait, BelongsToManyPostsTrait;
 
     /**
      * Get the presenter class.
@@ -48,4 +49,5 @@ class User extends CredentialsUser
         $this->deleteEvents();
         $this->deleteComments();
     }
+
 }
