@@ -15,6 +15,27 @@ body {
     padding: 60px 15px;
 }
 
+.fa-2 {
+  font-size: 2em;
+}
+
+.fa-3 {
+  font-size: 4em;
+}
+
+.fa-4 {
+  font-size: 8em;
+}
+
+
+.fa-5 {
+  font-size: 12em;
+}
+
+.fa-6 {
+  font-size: 24em;
+}
+
 .navbar {
     padding-right: 5px;
     padding-left: 5px;
@@ -134,4 +155,10 @@ body {
  box-shadow:none;
  -webkit-box-shadow:none;
  border-color:#cccccc;
+}
+
+
+.btn-right {
+  float: right;
+  cursor: pointer;
 }

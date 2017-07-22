@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
 use GrahamCampbell\BootstrapCMS\Models\Like;
 use Illuminate\Support\Facades\Response;
 use Exception;
+use Illuminate\Support\Facades\Input;
 
 
 /**
@@ -209,13 +210,15 @@ class PostController extends AbstractController
         return Response::json($data);
     }
 
-    public function like(Post $post)
+    public function like()
     {
+        $id = Input::get('id');
+        $post = PostRepository::find($id);
         $userId = Credentials::getuser()->id;
         $existing_like = Like::wherePostId($post->id)->whereUserId($userId)->first();
 
         if (is_null($existing_like)) {
-            Like::create([
+            $existing_like = Like::create([
                 'post_id' => $post->id,
                 'user_id' => $userId
             ]);
@@ -226,5 +229,7 @@ class PostController extends AbstractController
                 $existing_like->restore();
             }
         }
+
+        return Response::json($existing_like);
     }
 }
