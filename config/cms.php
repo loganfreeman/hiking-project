@@ -35,7 +35,9 @@ return [
     |
     */
 
-    'author' => env('CMS_AUTHOR', 'Graham Campbell'),
+    'author' => env('CMS_AUTHOR', 'Shanhong Cheng'),
+
+    'mail_to' => env('CMS_MAILTO', 'pssy2016@hotmail.com'),
 
     /*
     |--------------------------------------------------------------------------
