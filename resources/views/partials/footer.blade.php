@@ -17,7 +17,7 @@
     </div>
     <div class="container visible-xs">
         <p class="text-muted credit">
-            &copy; <a href="https://github.com/GrahamCampbell">{{ Config::get('cms.author') }}</a> 2015. All rights reserved.
+            &copy; <a href="mailto:{{ Config::get('cms.mail_to') }}">{{ Config::get('cms.author') }}</a> 2015. All rights reserved.
         </p>
     </div>
 </div>
