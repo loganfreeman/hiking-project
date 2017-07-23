@@ -45,7 +45,7 @@ Blog
 
     <ul class="list-group">
       @auth('user')
-      <i class="fa fa-thumbs-o-up fa-2 btn btn-info btn-secondary" aria-hidden="true" id="like" data-id="{{ $post->id }}"></i>
+      <i class="fa fa-thumbs-o-up fa-2 btn btn-info btn-secondary" aria-hidden="true" data-id="{{ $post->id }}"></i>
       @endauth
     </ul>
 @endforeach
@@ -58,4 +58,29 @@ Blog
 @auth('blog')
     @include('posts.deletes')
 @endauth
+@stop
+
+@section('js')
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('i.fa-thumbs-o-up').click(function() {
+    var postId = $(this).data('id');
+    $.ajax({
+      url: '/post/like',
+      type: 'POST',
+      dataType: 'JSON',
+      data: {
+        id: postId
+      },
+      success: function(response) {
+        console.log(response.message);
+      },
+      error: function(response) {
+        console.log(response);
+      }
+    })
+  });
+});
+</script>
 @stop
