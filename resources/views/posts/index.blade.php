@@ -6,7 +6,7 @@ Blog
 
 @section('top')
 <div class="page-header">
-<h1>Blog</h1>
+<h1>犹他华人感兴趣的话题</h1>
 </div>
 @stop
 
