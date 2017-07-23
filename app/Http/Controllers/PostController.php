@@ -114,7 +114,9 @@ class PostController extends AbstractController
 
         $comments = $post->comments()->orderBy('id', 'desc')->get();
 
-        return View::make('posts.show', ['post' => $post, 'comments' => $comments]);
+        $likes = count($post->likes()->get());
+
+        return View::make('posts.show', ['post' => $post, 'comments' => $comments, 'likes' => $likes]);
     }
 
     /**

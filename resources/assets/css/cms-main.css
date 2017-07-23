@@ -181,11 +181,14 @@ body {
 
 }
 
+.actions {
+  margin-left: 10px;
+}
 
 .btn-right {
   float: right;
 }
 
-.btn-action {
+.btn-action, .icons-sm {
   cursor: pointer;
 }

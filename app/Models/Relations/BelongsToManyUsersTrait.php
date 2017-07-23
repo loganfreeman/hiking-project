@@ -27,4 +27,9 @@ trait BelongsToManyUsersTrait
      {
          return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\User', 'likes');
      }
+
+     public function likesCount()
+     {
+       return count($this->likes()->get());
+     }
 }

@@ -43,11 +43,13 @@ Blog
       @endauth
     </ul>
 
-    <ul class="list-group">
+    <div class="actions">
       @auth('user')
-      <i class="fa fa-thumbs-o-up fa-2 btn btn-info btn-secondary" aria-hidden="true" data-id="{{ $post->id }}"></i>
+      <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
       @endauth
-    </ul>
+    <strong>{!! $post->likesCount() !!} likes</strong>
+    </div>
+
 @endforeach
 @if (isset($links))
 {!! $links !!}
