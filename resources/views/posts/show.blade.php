@@ -7,7 +7,7 @@
 @section('top')
 <div class="page-header">
 @auth('user')
-<i class="fa fa-thumbs-o-up btn-right fa-2" aria-hidden="true" id="like" data-id="{{ $post->id }}"></i>
+<i class="fa fa-thumbs-o-up btn-right btn-action fa-2" aria-hidden="true" id="like" data-id="{{ $post->id }}"></i>
 @endauth
 <h1>{{ $post->title }}</h1>
 </div>

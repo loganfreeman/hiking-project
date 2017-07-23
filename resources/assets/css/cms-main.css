@@ -157,8 +157,35 @@ body {
  border-color:#cccccc;
 }
 
+.add-on {
+  width: 75%;
+}
+
+.right-action-col {
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .add-on {
+    width: 100%;
+  }
+
+  .right-action-col {
+    float: none;
+  }
+
+  .list-group > a.btn {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+}
+
 
 .btn-right {
   float: right;
+}
+
+.btn-action {
   cursor: pointer;
 }
