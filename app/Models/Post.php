@@ -13,6 +13,7 @@ namespace GrahamCampbell\BootstrapCMS\Models;
 
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyCommentsTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToManyUsersTrait;
+use GrahamCampbell\BootstrapCMS\Models\Relations\PostBelongsToManyCategoriesTrait;
 use GrahamCampbell\Credentials\Models\AbstractModel;
 use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
@@ -26,7 +27,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class Post extends AbstractModel implements HasPresenter
 {
-    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes, BelongsToManyUsersTrait;
+    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes, BelongsToManyUsersTrait, PostBelongsToManyCategoriesTrait;
 
     /**
      * The table the posts are stored in.

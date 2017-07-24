@@ -3,9 +3,12 @@
 namespace GrahamCampbell\BootstrapCMS\Models;
 
 use GrahamCampbell\Credentials\Models\AbstractModel;
+use GrahamCampbell\BootstrapCMS\Models\Relations\CategoryBelongsToManyPostsTrait;
 
 class Category extends AbstractModel
 {
+
+  use CategoryBelongsToManyPostsTrait;
   /**
    * The table the comments are stored in.
    *
