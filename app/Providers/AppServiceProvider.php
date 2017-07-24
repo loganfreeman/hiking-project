@@ -15,11 +15,13 @@ use GrahamCampbell\BootstrapCMS\Http\Controllers\CommentController;
 use GrahamCampbell\BootstrapCMS\Navigation\Factory;
 use GrahamCampbell\BootstrapCMS\Observers\PageObserver;
 use GrahamCampbell\BootstrapCMS\Repositories\CommentRepository;
+use GrahamCampbell\BootstrapCMS\Repositories\CategoryRepository;
 use GrahamCampbell\BootstrapCMS\Repositories\EventRepository;
 use GrahamCampbell\BootstrapCMS\Repositories\PageRepository;
 use GrahamCampbell\BootstrapCMS\Repositories\PostRepository;
 use GrahamCampbell\BootstrapCMS\Subscribers\CommandSubscriber;
 use GrahamCampbell\BootstrapCMS\Subscribers\NavigationSubscriber;
+use GrahamCampbell\BootstrapCMS\Models\Category;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -88,6 +90,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerEventRepository();
         $this->registerPageRepository();
         $this->registerPostRepository();
+        $this->registerCategoryRepository();
 
         $this->registerCommandSubscriber();
         $this->registerNavigationSubscriber();
@@ -132,6 +135,24 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->alias('commentrepository', 'GrahamCampbell\BootstrapCMS\Repositories\CommentRepository');
+    }
+
+    /**
+     * Register the comment repository class.
+     *
+     * @return void
+     */
+    protected function registerCategoryRepository()
+    {
+        $this->app->singleton('categoryrepository', function ($app) {
+            $category = new Category();
+
+            $validator = $app['validator'];
+
+            return new CategoryRepository($category, $validator);
+        });
+
+        $this->app->alias('categoryrepository', 'GrahamCampbell\BootstrapCMS\Repositories\CategoryRepository');
     }
 
     /**
