@@ -24,7 +24,7 @@
         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-10">
             @foreach ($categories as $category)
                 <label class="checkbox-inline">
-                  <input type="checkbox" name="categories[]" value="{!! $category->name !!}">{!! $category->name !!}
+                  <input type="checkbox" name="categories[]" value="{!! $category->id !!}">{!! $category->name !!}
                 </label>
             @endforeach
             {!! ($errors->has('categories') ? $errors->first('categories') : '') !!}

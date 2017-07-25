@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Http\Request;
 use GrahamCampbell\BootstrapCMS\Models\Like;
+use GrahamCampbell\BootstrapCMS\Models\PostCategory;
 use Illuminate\Support\Facades\Response;
 use Exception;
 use Illuminate\Support\Facades\Input;
@@ -103,6 +104,8 @@ class PostController extends AbstractController
 
         $post = PostRepository::create($input);
 
+        $this->addPostToCategory($post, $categories);
+
         return Redirect::route('blog.posts.show', ['posts' => $post->id])
             ->with('success', trans('messages.post.store_success'));
     }
@@ -137,8 +140,9 @@ class PostController extends AbstractController
     {
         $post = PostRepository::find($id);
         $this->checkPost($post);
+        $categories = CategoryRepository::index();
 
-        return View::make('posts.edit', ['post' => $post]);
+        return View::make('posts.edit', ['post' => $post, 'categories' => $categories]);
     }
 
     /**
@@ -148,7 +152,7 @@ class PostController extends AbstractController
      *
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
         $input = Binput::only(['title', 'summary', 'body']);
 
@@ -161,6 +165,12 @@ class PostController extends AbstractController
         $this->checkPost($post);
 
         $post->update($input);
+
+        $categories = $request->input('categories');
+
+        Log::debug('categories: '.implode(',', $categories));
+
+        $this->addPostToCategory($post, $categories);
 
         return Redirect::route('blog.posts.show', ['posts' => $post->id])
             ->with('success', trans('messages.post.update_success'));
@@ -240,5 +250,15 @@ class PostController extends AbstractController
         }
 
         return Response::json($existing_like);
+    }
+
+    public function addPostToCategory($post, $categories)
+    {
+      foreach ($categories as $category_id) {
+        $existing = PostCategory::wherePostId($post->id)->whereCategoryId($category_id)->first();
+        if(is_null($existing)) {
+          PostCategory::create(['post_id' => $post->id, 'category_id' => $category_id]);
+        }
+      }
     }
 }
