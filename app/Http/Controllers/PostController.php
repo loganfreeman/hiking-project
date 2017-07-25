@@ -142,6 +142,20 @@ class PostController extends AbstractController
         $this->checkPost($post);
         $categories = CategoryRepository::index();
 
+        $postCategories = PostCategory::wherePostId($post->id)->get();
+
+        foreach ($categories as $category) {
+
+          $category->checked = false;
+
+          foreach ($postCategories as $postCategory) {
+            if($category->id == $postCategory->category_id){
+              $category->checked = true;
+              break;
+            }
+          }
+        }
+
         return View::make('posts.edit', ['post' => $post, 'categories' => $categories]);
     }
 
