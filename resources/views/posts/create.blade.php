@@ -20,6 +20,7 @@ Create Post
             'title' => '',
             'summary' => '',
             'body' => '',
+            'categories' => '',
     ], ];
     ?>
     @include('posts.form')

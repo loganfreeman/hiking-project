@@ -14,8 +14,20 @@
     <div class="form-group{!! ($errors->has('summary')) ? ' has-error' : '' !!}">
         <label class="col-md-2 col-sm-3 col-xs-10 control-label" for="summary">Post Summary</label>
         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-10">
-            <input name="summary" value="{!! Request::old('summary', $form['defaults']['summary']) !!}" type="text" class="form-control" placeholder="Post Title">
+            <input name="summary" value="{!! Request::old('summary', $form['defaults']['summary']) !!}" type="text" class="form-control" placeholder="Post summary">
             {!! ($errors->has('summary') ? $errors->first('summary') : '') !!}
+        </div>
+    </div>
+
+    <div class="form-group{!! ($errors->has('categories')) ? ' has-error' : '' !!}">
+        <label class="col-md-2 col-sm-3 col-xs-10 control-label" for="categories">Category</label>
+        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-10">
+            @foreach ($categories as $category)
+                <label class="checkbox-inline">
+                  <input type="checkbox" name="categories[]" value="{!! $category->name !!}">{!! $category->name !!}
+                </label>
+            @endforeach
+            {!! ($errors->has('categories') ? $errors->first('categories') : '') !!}
         </div>
     </div>
 

@@ -22,6 +22,8 @@ use GrahamCampbell\BootstrapCMS\Models\Like;
 use Illuminate\Support\Facades\Response;
 use Exception;
 use Illuminate\Support\Facades\Input;
+use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
+use Illuminate\Support\Facades\Log;
 
 
 /**
@@ -75,7 +77,8 @@ class PostController extends AbstractController
      */
     public function create()
     {
-        return View::make('posts.create');
+        $categories = CategoryRepository::index();
+        return View::make('posts.create', ['categories' => $categories]);
     }
 
     /**
@@ -83,11 +86,15 @@ class PostController extends AbstractController
      *
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         $input = array_merge(['user_id' => Credentials::getuser()->id], Binput::only([
             'title', 'summary', 'body',
         ]));
+
+        $categories = $request->input('categories');
+
+        Log::debug('categories: '.implode(',', $categories));
 
         $val = PostRepository::validate($input, array_keys($input));
         if ($val->fails()) {
