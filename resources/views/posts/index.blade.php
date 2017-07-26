@@ -35,6 +35,11 @@ Blog
     <p>
         <strong>{!! $post->summary !!}</strong>
     </p>
+    <p>
+      @foreach ($post->categories as $category)
+          <span class="badge">{!! $category['name'] !!}</span>
+      @endforeach
+    </p>
     <ul class="list-group">
       <a class="btn btn-success btn-secondary" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"><i class="fa fa-file-text"></i> Show Post</a>
       @auth('blog')

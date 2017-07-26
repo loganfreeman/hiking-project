@@ -28,4 +28,8 @@ trait PostBelongsToManyCategoriesTrait
          return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\Category', 'post_categories');
      }
 
+     public function categoryNames() {
+       return array_map(function($o) { return $o['name']; }, $this->categories->toArray());
+     }
+
 }
