@@ -12,32 +12,33 @@ Blog
 
 @section('content')
 <div class="my-toolbar">
-    @auth('blog')
-        <div class="right-action-col">
-            <ul class="list-group">
-              <li class="list-group-item">
-                <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
-              </li>
-              <li class="list-group-item">
-                <form>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Choose a category <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      @foreach ($categories as $category)
-                          <li><a href="#">{!! $category['name'] !!}</a></li>
-                      @endforeach
-                    </ul>
-                  </div>
-                </form>
-              </li>
-            </ul>
+
+    <div class="right-action-col">
+        <ul class="list-group">
+          @auth('blog')
+            <li class="list-group-item">
+              <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
+            </li>
+          @endauth
+          <li class="list-group-item">
+            <form>
+              <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Choose a category <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  @foreach ($categories as $category)
+                      <li><a href="#">{!! $category['name'] !!}</a></li>
+                  @endforeach
+                </ul>
+              </div>
+            </form>
+          </li>
+        </ul>
 
 
 
-        </div>
-    @endauth
+    </div>
 
     <div class="left-action-col">
       <form class="navbar-form" role="search" action="/search/posts" method="post">
