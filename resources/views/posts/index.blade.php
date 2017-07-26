@@ -52,6 +52,7 @@ Blog
     </div>
 
 </div>
+<div class="posts-container">
 @foreach($posts as $post)
     <h2>{!! $post->title !!}</h2>
     <p>
@@ -76,8 +77,9 @@ Blog
       @endauth
     <strong>{!! $post->likesCount() !!} likes</strong>
     </div>
-
 @endforeach
+</div>
+
 @if (isset($links))
 {!! $links !!}
 @endif
@@ -93,6 +95,10 @@ Blog
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 <script>
 $(document).ready(function() {
+  $('.dropdown-toggle').dropdown();
+  $(".dropdown-menu li a").click(function(){
+
+  });
   $('i.fa-thumbs-o-up').click(function() {
     var postId = $(this).data('id');
     $.ajax({
