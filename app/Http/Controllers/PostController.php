@@ -67,8 +67,9 @@ class PostController extends AbstractController
     {
         $posts = PostRepository::paginate();
         $links = PostRepository::links();
+        $categories = CategoryRepository::index();
 
-        return View::make('posts.index', ['posts' => $posts, 'links' => $links]);
+        return View::make('posts.index', ['posts' => $posts, 'links' => $links, 'categories' => $categories]);
     }
 
     /**
