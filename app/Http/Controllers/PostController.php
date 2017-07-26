@@ -96,7 +96,11 @@ class PostController extends AbstractController
 
         $categories = $request->input('categories');
 
-        Log::debug('categories: '.implode(',', $categories));
+        if(is_null($categories)) {
+          $categories = [];
+        }
+
+        Log::debug('Create categories: '.implode(',', $categories));
 
         $val = PostRepository::validate($input, array_keys($input));
         if ($val->fails()) {
@@ -183,7 +187,11 @@ class PostController extends AbstractController
 
         $categories = $request->input('categories');
 
-        Log::debug('categories: '.implode(',', $categories));
+        if(is_null($categories)) {
+          $categories = [];
+        }
+
+        Log::debug('Update categories: '.implode(',', $categories));
 
         $this->addPostToCategory($post, $categories);
 
@@ -273,6 +281,18 @@ class PostController extends AbstractController
         $existing = PostCategory::wherePostId($post->id)->whereCategoryId($category_id)->first();
         if(is_null($existing)) {
           PostCategory::create(['post_id' => $post->id, 'category_id' => $category_id]);
+        }
+      }
+
+      foreach ($post->categories as $post_category) {
+        $category_id = $post_category['id'];
+        Log::debug('Existing category ID ' . $category_id);
+        if (!in_array($category_id, $categories)) {
+            Log::debug('Deleting category ' . $category_id);
+            $existing = PostCategory::wherePostId($post->id)->whereCategoryId($category_id)->first();
+            if(!is_null($existing)) {
+              $existing->delete();
+            }
         }
       }
     }
