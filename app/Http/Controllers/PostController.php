@@ -63,11 +63,15 @@ class PostController extends AbstractController
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
         $posts = PostRepository::paginate();
         $links = PostRepository::links();
         $categories = CategoryRepository::index();
+
+        $category = $request->input('category');
+
+        Log::debug('Input category: '. $category);
 
         return View::make('posts.index', ['posts' => $posts, 'links' => $links, 'categories' => $categories]);
     }

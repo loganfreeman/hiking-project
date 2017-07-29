@@ -21,12 +21,14 @@ Blog
             </li>
           @endauth
           <li class="list-group-item">
-            <form>
+            <form id="choose-category" action="/blog/posts">
               <div class="btn-group">
                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Choose a category <span class="caret"></span>
                 </button>
+                <input type="hidden" name="category" id="category"></input>
                 <ul class="dropdown-menu">
+                  <li><a href="#">None</a></li>
                   @foreach ($categories as $category)
                       <li><a href="#">{!! $category['name'] !!}</a></li>
                   @endforeach
@@ -97,7 +99,9 @@ Blog
 $(document).ready(function() {
   $('.dropdown-toggle').dropdown();
   $(".dropdown-menu li a").click(function(){
-
+    var category = $(this).text();
+    $('#category').val(category);
+    $('#choose-category')[0].submit();
   });
   $('i.fa-thumbs-o-up').click(function() {
     var postId = $(this).data('id');
