@@ -14,6 +14,8 @@ namespace GrahamCampbell\BootstrapCMS\Repositories;
 use GrahamCampbell\Credentials\Repositories\AbstractRepository;
 use GrahamCampbell\Credentials\Repositories\PaginateRepositoryTrait;
 use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
+use Illuminate\Support\Facades\Log;
+
 /**
  * This is the post repository class.
  *
