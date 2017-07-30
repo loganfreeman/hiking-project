@@ -14,6 +14,10 @@ namespace GrahamCampbell\BootstrapCMS\Seeds;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use GrahamCampbell\BootstrapCMS\Models\Post;
+use GrahamCampbell\BootstrapCMS\Models\PostCategory;
+use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
+
 
 /**
  * This is the posts table seeder class.
@@ -41,5 +45,24 @@ class PostsTableSeeder extends Seeder
         ];
 
         DB::table('posts')->insert($post);
+    }
+
+
+    public function generateFakePosts($count)
+    {
+      $faker = \Faker\Factory::create();
+      $categories = CategoryRepository::index();
+
+      for ($i = 1; $i <= $count; $i++) {
+        $post = new Post;
+        $post->title = $faker->realText(10);
+        $post->summary = $faker->realText(50);
+        $post->body = implode('   ', $faker->paragraphs(3));
+        $post->user_id = 1;
+        $post->save();
+        $post->categories()->sync([rand(1, count($categories))]);
+
+      }
+
     }
 }

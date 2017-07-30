@@ -59,19 +59,31 @@
 
 <div class="row">
     <div class="hidden-xs">
-        <div class="col-md-8 col-xs-6">
-            <p class="lead">{!! $post->summary !!}</p>
-        </div>
-        <div class="col-md-4 col-xs-6">
-            <div class="pull-right">
-                <p>Author: {!! $post->author !!}</p>
-            </div>
+        <div>
+          <div class="col-md-8 col-xs-6">
+              <p class="lead">{!! $post->summary !!}</p>
+          </div>
+          <div class="col-md-4 col-xs-6">
+              <div class="pull-right">
+                  <p>Author: {!! $post->author !!}</p>
+              </div>
+          </div>
+          <div class="col-md-12 col-xs-12">
+            @foreach ($post->categories as $category)
+                <span class="badge">{!! $category['name'] !!}</span>
+            @endforeach
+          </div>
         </div>
     </div>
     <div class="visible-xs">
         <div class="col-xs-12">
             <p class="lead">{!! $post->summary !!}</p>
             <p>Author: {!! $post->author !!}</p>
+        </div>
+        <div class="col-md-12 col-xs-12">
+          @foreach ($post->categories as $category)
+              <span class="badge">{!! $category['name'] !!}</span>
+          @endforeach
         </div>
     </div>
 </div>

@@ -123,7 +123,7 @@ class PostController extends AbstractController
 
         $post = PostRepository::create($input);
 
-        $this->addPostToCategory($post, $categories);
+        $this->syncCategories($post, $categories);
 
         return Redirect::route('blog.posts.show', ['posts' => $post->id])
             ->with('success', trans('messages.post.store_success'));
@@ -207,7 +207,7 @@ class PostController extends AbstractController
 
         Log::debug('Update categories: '.implode(',', $categories));
 
-        $this->addPostToCategory($post, $categories);
+        $this->syncCategories($post, $categories);
 
         return Redirect::route('blog.posts.show', ['posts' => $post->id])
             ->with('success', trans('messages.post.update_success'));
@@ -287,6 +287,11 @@ class PostController extends AbstractController
         }
 
         return Response::json($existing_like);
+    }
+
+    public function syncCategories($post, $categories)
+    {
+      $post->categories()->sync($categories);
     }
 
     public function addPostToCategory($post, $categories)
