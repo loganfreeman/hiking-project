@@ -13,8 +13,7 @@ namespace GrahamCampbell\BootstrapCMS\Repositories;
 
 use GrahamCampbell\Credentials\Repositories\AbstractRepository;
 use GrahamCampbell\Credentials\Repositories\PaginateRepositoryTrait;
-use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
-use Illuminate\Support\Facades\Log;
+use GrahamCampbell\BootstrapCMS\Models\Category;
 
 /**
  * This is the post repository class.
@@ -32,9 +31,7 @@ class PostRepository extends AbstractRepository
 
     public function findByCategory($category_name)
     {
-      $category_id = CategoryRepository::findByName($category_name)->id;
-      $model = $this->model;
-      return $model::join('post_categories', 'posts.id', '=', 'post_categories.post_id')->where('post_categories.category_id', $category_id)->get();
+      return Category::where('name', $category_name)->first()->posts;
     }
 
 
