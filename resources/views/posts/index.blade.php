@@ -27,7 +27,6 @@ Blog
                   Choose a category <span class="caret"></span>
                 </button>
                 <input type="hidden" name="category" id="category"></input>
-                <input type="hidden" name="page" id="page"></input>
                 <ul class="dropdown-menu">
                   <li><a href="#">None</a></li>
                   @foreach ($categories as $category)
@@ -110,8 +109,6 @@ $(document).ready(function() {
   $('.dropdown-toggle').dropdown();
   $(".dropdown-menu li a").click(function(){
     var category = $(this).text();
-    var page = getParameterByName('page');
-    $('#page').val(page);
     $('#category').val(category);
     $('#choose-category')[0].submit();
   });
