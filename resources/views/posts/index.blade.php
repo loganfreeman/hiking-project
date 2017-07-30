@@ -28,9 +28,9 @@ Blog
                 </button>
                 <input type="hidden" name="category" id="category"></input>
                 <ul class="dropdown-menu">
-                  <li><a href="#">None</a></li>
+                  <li><a href="#" category="">None</a></li>
                   @foreach ($categories as $category)
-                      <li><a href="#">{!! $category['name'] !!}</a></li>
+                      <li><a href="#" category="{!! $category['name'] !!}">{!! $category['name'] !!}</a></li>
                   @endforeach
                 </ul>
               </div>
@@ -108,7 +108,7 @@ function getParameterByName(name, url) {
 $(document).ready(function() {
   $('.dropdown-toggle').dropdown();
   $(".dropdown-menu li a").click(function(){
-    var category = $(this).text();
+    var category = $(this).attr('category');
     $('#category').val(category);
     $('#choose-category')[0].submit();
   });

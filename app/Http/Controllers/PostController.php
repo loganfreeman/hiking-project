@@ -25,6 +25,7 @@ use Exception;
 use Illuminate\Support\Facades\Input;
 use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
 use Illuminate\Support\Facades\Log;
+use GrahamCampbell\BootstrapCMS\Models\Post;
 
 
 /**
@@ -70,8 +71,17 @@ class PostController extends AbstractController
 
         $category = $request->input('category');
 
-        $posts = PostRepository::paginate();
-        $links = PostRepository::links();
+        if(empty($category)) {
+            $posts = PostRepository::paginate();
+            $links = PostRepository::links();
+        }
+        else
+        {
+          $posts = PostRepository::paginateWithCategory($category);
+          $links = PostRepository::links();
+        }
+
+
 
         return View::make('posts.index', ['posts' => $posts, 'links' => $links, 'categories' => $categories]);
     }
