@@ -22,4 +22,10 @@ use GrahamCampbell\Credentials\Repositories\PaginateRepositoryTrait;
 class CategoryRepository extends AbstractRepository
 {
     use PaginateRepositoryTrait;
+
+    public function findByName($name)
+    {
+      $model = $this->model;
+      return $model::where('name', $name)->first();
+    }
 }
