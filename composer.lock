@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28cc522be1e48d5096ada634568680c1",
-    "content-hash": "a645b2e594153661641490529577bb99",
+    "hash": "a5f066ab696249651b8344c6c4a7491d",
+    "content-hash": "b930a0eae717c114d1dc99d6e3ea70dd",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -605,7 +605,6 @@
                 "laravel",
                 "starter"
             ],
-            "abandoned": true,
             "time": "2016-04-26 14:18:59"
         },
         {
@@ -816,7 +815,6 @@
                 "laravel",
                 "minifier"
             ],
-            "abandoned": "htmlmin/htmlmin",
             "time": "2017-01-01 13:22:51"
         },
         {
@@ -1304,6 +1302,64 @@
             "time": "2017-03-20 17:10:46"
         },
         {
+            "name": "imagine/imagine",
+            "version": "v0.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avalanche123/Imagine.git",
+                "reference": "a9a702a946073cbca166718f1b02a1e72d742daa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/a9a702a946073cbca166718f1b02a1e72d742daa",
+                "reference": "a9a702a946073cbca166718f1b02a1e72d742daa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "sami/sami": "^3.3",
+                "symfony/phpunit-bridge": "^3.2"
+            },
+            "suggest": {
+                "ext-gd": "to use the GD implementation",
+                "ext-gmagick": "to use the Gmagick implementation",
+                "ext-imagick": "to use the Imagick implementation"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Imagine": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                }
+            ],
+            "description": "Image processing for PHP 5.3",
+            "homepage": "http://imagine.readthedocs.org/",
+            "keywords": [
+                "drawing",
+                "graphics",
+                "image manipulation",
+                "image processing"
+            ],
+            "time": "2017-05-16 10:31:22"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -1721,6 +1777,62 @@
                 "storage"
             ],
             "time": "2017-04-28 10:15:08"
+        },
+        {
+            "name": "matriphe/imageupload",
+            "version": "5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matriphe/laravel-imageupload.git",
+                "reference": "e5a41bd937f03cee0da3fcbbb33fc8ee48d844df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matriphe/laravel-imageupload/zipball/e5a41bd937f03cee0da3fcbbb33fc8ee48d844df",
+                "reference": "e5a41bd937f03cee0da3fcbbb33fc8ee48d844df",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0",
+                "imagine/imagine": "0.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "4.*"
+            },
+            "suggest": {
+                "league/flysystem-aws-s3-v2": "Amazon S3 storage driver",
+                "league/flysystem-rackspace": "Rackspace Cloud Storage driver"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Matriphe\\Imageupload\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhammad Zamroni",
+                    "email": "halo@matriphe.com",
+                    "homepage": "http://matriphe.com"
+                }
+            ],
+            "description": "Upload image using Laravel's build in function and resize it using Imagine library automatically.",
+            "keywords": [
+                "image",
+                "imagine",
+                "laravel",
+                "upload"
+            ],
+            "time": "2017-03-26 03:58:23"
         },
         {
             "name": "mccool/laravel-auto-presenter",

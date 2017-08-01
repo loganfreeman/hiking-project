@@ -170,6 +170,7 @@ return [
         'GrahamCampbell\LogViewer\LogViewerServiceProvider',
         'GrahamCampbell\BootstrapCMS\Providers\AppServiceProvider',
         'GrahamCampbell\BootstrapCMS\Providers\RouteServiceProvider',
+        'Matriphe\Imageupload\ImageuploadServiceProvider',
 
     ],
 
@@ -216,6 +217,7 @@ return [
         'URL'         => 'Illuminate\Support\Facades\URL',
         'Validator'   => 'Illuminate\Support\Facades\Validator',
         'View'        => 'Illuminate\Support\Facades\View',
+        'Imageupload' => 'Matriphe\Imageupload\ImageuploadFacade',
 
     ],
 

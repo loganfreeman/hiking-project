@@ -1,4 +1,4 @@
-<form class="form-horizontal" action="{{ $form['url'] }}" method="{{ $form['method'] }}">
+<form class="form-horizontal" action="{{ $form['url'] }}" method="{{ $form['method'] }}" enctype="multipart/form-data">
 
     {{ csrf_field() }}
     <input type="hidden" name="_method" value="{{ isset($form['_method'])? $form['_method'] : $form['method'] }}">
@@ -36,6 +36,14 @@
         <div class="col-lg-6 col-md-8 col-sm-9 col-xs-12">
             <textarea name="body" type="text" class="form-control" data-provide="markdown" placeholder="Post Body" rows="10">{!! Request::old('body', $form['defaults']['body']) !!}</textarea>
             {!! ($errors->has('body') ? $errors->first('body') : '') !!}
+        </div>
+    </div>
+
+    <div class="form-group{!! ($errors->has('image')) ? ' has-error' : '' !!}">
+        <label class="col-md-2 col-sm-3 col-xs-10 control-label" for="image">Post image</label>
+        <div class="col-lg-6 col-md-8 col-sm-9 col-xs-12">
+            <input type="file" class="form-control" name="image" accept="image/gif, image/jpeg, image/png">
+            {!! ($errors->has('image') ? $errors->first('image') : '') !!}
         </div>
     </div>
 

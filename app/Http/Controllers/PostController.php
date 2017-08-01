@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Input;
 use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
 use Illuminate\Support\Facades\Log;
 use GrahamCampbell\BootstrapCMS\Models\Post;
+use Imageupload;
 
 
 /**
@@ -125,6 +126,11 @@ class PostController extends AbstractController
 
         $this->syncCategories($post, $categories);
 
+        if ($request->hasFile('image')) {
+            Imageupload::upload($request->file('image'), $post->id);
+        }
+
+
         return Redirect::route('blog.posts.show', ['posts' => $post->id])
             ->with('success', trans('messages.post.store_success'));
     }
@@ -208,6 +214,11 @@ class PostController extends AbstractController
         Log::debug('Update categories: '.implode(',', $categories));
 
         $this->syncCategories($post, $categories);
+
+        if ($request->hasFile('image')) {
+            Log::debug('Upload images: '.$post->id);
+            Imageupload::upload($request->file('image'), $post->id);
+        }
 
         return Redirect::route('blog.posts.show', ['posts' => $post->id])
             ->with('success', trans('messages.post.update_success'));
