@@ -85,6 +85,8 @@ class Post extends AbstractModel implements HasPresenter
      */
     public static $sort = 'desc';
 
+    public static $image_upload_directory = 'public/uploads/images/';
+
     /**
      * The post validation rules.
      *
@@ -119,6 +121,20 @@ class Post extends AbstractModel implements HasPresenter
     public function beforeDelete()
     {
         $this->deleteComments();
+    }
+
+    public function hasImage()
+    {
+      return count(glob("public/uploads/images/{$this->id}.*")) > 0;
+    }
+
+    public function imagePath()
+    {
+      if($this->hasImage())
+      {
+        return glob("public/uploads/images/{$this->id}.*")[0];
+      }
+
     }
 
 }
