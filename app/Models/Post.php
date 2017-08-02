@@ -19,6 +19,8 @@ use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
+use Illuminate\Support\Facades\Log;
+
 
 /**
  * This is the post model class.
@@ -125,14 +127,19 @@ class Post extends AbstractModel implements HasPresenter
 
     public function hasImage()
     {
-      return count(glob("public/uploads/images/{$this->id}.*")) > 0;
+      Log::debug('Has Image ' . $this->id . ' Count = ' . count(glob(public_path() . "/uploads/images/{$this->id}.*")));
+      foreach (glob(public_path(). "/uploads/images/{$this->id}.*") as $file) {
+        Log::debug($file);
+      }
+      return count(glob(public_path() . "/uploads/images/{$this->id}.*")) > 0;
     }
 
     public function imagePath()
     {
       if($this->hasImage())
       {
-        return substr(glob("public/uploads/images/{$this->id}.*")[0], 6);
+        Log::debug('Image Path: ' . substr(glob(public_path() . "/uploads/images/{$this->id}.*")[0], strlen(public_path())));
+        return substr(glob(public_path() . "/uploads/images/{$this->id}.*")[0], strlen(public_path()));
       }
 
     }

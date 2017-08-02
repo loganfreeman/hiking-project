@@ -63,8 +63,6 @@
   </div>
 @else
 
-@endif
-
 <div class="row">
     <div class="hidden-xs">
         <div>
