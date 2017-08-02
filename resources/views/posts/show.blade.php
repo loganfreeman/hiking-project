@@ -59,10 +59,10 @@
 
 @if($post->hasImage())
   <div class="post-image">
-    <image src="{!! $post->imagePath() !!}" />
+    <image src="{{ URL::to($post->imagePath()) }}" />
   </div>
 @else
-  
+
 @endif
 
 <div class="row">
