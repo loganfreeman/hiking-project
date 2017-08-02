@@ -57,6 +57,14 @@
     <hr>
 @endauth
 
+@if($post->hasImage())
+  <div class="post-image">
+    <image src="{!! $post->imagePath() !!}" />
+  </div>
+@else
+  
+@endif
+
 <div class="row">
     <div class="hidden-xs">
         <div>

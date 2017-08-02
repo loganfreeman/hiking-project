@@ -65,6 +65,14 @@ Blog
           <span class="badge">{!! $category['name'] !!}</span>
       @endforeach
     </p>
+
+    @if($post->hasImage())
+      <div class="post-image">
+        <image src="{!! $post->imagePath() !!}" />
+      </div>
+    @else
+      
+    @endif
     <ul class="list-group">
       <a class="btn btn-success btn-secondary" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"><i class="fa fa-file-text"></i> Show Post</a>
       @auth('blog')

@@ -132,7 +132,7 @@ class Post extends AbstractModel implements HasPresenter
     {
       if($this->hasImage())
       {
-        return glob("public/uploads/images/{$this->id}.*")[0];
+        return substr(glob("public/uploads/images/{$this->id}.*")[0], 6);
       }
 
     }
