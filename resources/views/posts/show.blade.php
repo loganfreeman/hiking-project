@@ -61,7 +61,7 @@
   <div class="post-image">
     <img src="{{ URL::to($post->imagePath()) }}" />
   </div>
-@else
+@endif
 
 <div class="row">
     <div class="hidden-xs">
