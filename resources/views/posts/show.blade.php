@@ -59,7 +59,7 @@
 
 @if($post->hasImage())
   <div class="post-image">
-    <image src="{{ URL::to($post->imagePath()) }}" />
+    <img src="{{ URL::to($post->imagePath()) }}" />
   </div>
 @else
 
