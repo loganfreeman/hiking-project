@@ -83,7 +83,8 @@ Blog
       @auth('user')
       <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
       @endauth
-    <strong>{!! $post->likesCount() !!} likes</strong>
+      <span><strong>{!! $post->likesCount() !!} likes</strong></span>
+      <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
     </div>
 @endforeach
 </div>
@@ -117,6 +118,9 @@ $(document).ready(function() {
     var category = $(this).attr('category');
     $('#category').val(category);
     $('#choose-category')[0].submit();
+  });
+  $('i.fa-bookmark').click(function() {
+    console.log('bookmark clicked');
   });
   $('i.fa-thumbs-o-up').click(function() {
     var postId = $(this).data('id');
