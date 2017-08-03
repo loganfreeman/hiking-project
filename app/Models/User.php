@@ -13,6 +13,7 @@ namespace GrahamCampbell\BootstrapCMS\Models;
 
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyCommentsTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToManyPostsTrait;
+use GrahamCampbell\BootstrapCMS\Models\Relations\UserHasManyFavoritePosts;
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyEventsTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyPagesTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyPostsTrait;
@@ -25,7 +26,7 @@ use GrahamCampbell\Credentials\Models\User as CredentialsUser;
  */
 class User extends CredentialsUser
 {
-    use HasManyPagesTrait, HasManyPostsTrait, HasManyEventsTrait, HasManyCommentsTrait, BelongsToManyPostsTrait;
+    use HasManyPagesTrait, HasManyPostsTrait, HasManyEventsTrait, HasManyCommentsTrait, BelongsToManyPostsTrait, UserHasManyFavoritePosts;
 
     /**
      * Get the presenter class.

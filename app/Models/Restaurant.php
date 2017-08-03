@@ -1,6 +1,6 @@
 <?php
 
-namespace GrahamCampbell\BootstrapCMS;
+namespace GrahamCampbell\BootstrapCMS\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

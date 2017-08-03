@@ -258,6 +258,16 @@ class PostController extends AbstractController
         }
     }
 
+    public function isFavoritedByMe($id)
+    {
+
+    }
+
+    public function favorite()
+    {
+      
+    }
+
 
     public function isLikedByMe($id)
     {

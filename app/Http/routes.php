@@ -43,6 +43,9 @@ $router->post('search/posts', ['as' => 'searchPosts', 'uses' => 'PostController@
 $router->get('post/{id}/islikedbyme', ['as' => 'isLikedByMe', 'uses' => 'PostController@isLikedByMe']);
 $router->post('post/like',  ['as' => 'like', 'uses' => 'PostController@like']);
 
+$router->get('post/{id}/isfavoritedbyme', ['as' => 'isFavoriteByMe', 'uses' => 'PostController@isFavoritedByMe']);
+$router->post('post/favorite',  ['as' => 'favorite', 'uses' => 'PostController@favorite']);
+
 // page routes
 $router->resource('pages', 'PageController');
 

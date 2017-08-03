@@ -14,6 +14,7 @@ namespace GrahamCampbell\BootstrapCMS\Models;
 use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyCommentsTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToManyUsersTrait;
 use GrahamCampbell\BootstrapCMS\Models\Relations\PostBelongsToManyCategoriesTrait;
+use GrahamCampbell\BootstrapCMS\Models\Relations\PostsCanBeFavoredByManyUsers;
 use GrahamCampbell\Credentials\Models\AbstractModel;
 use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
@@ -29,7 +30,7 @@ use Illuminate\Support\Facades\Log;
  */
 class Post extends AbstractModel implements HasPresenter
 {
-    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes, BelongsToManyUsersTrait, PostBelongsToManyCategoriesTrait;
+    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes, BelongsToManyUsersTrait, PostBelongsToManyCategoriesTrait, PostsCanBeFavoredByManyUsers;
 
     /**
      * The table the posts are stored in.
