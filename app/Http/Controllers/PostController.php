@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Http\Request;
 use GrahamCampbell\BootstrapCMS\Models\Like;
+use GrahamCampbell\BootstrapCMS\Models\Favorite;
 use GrahamCampbell\BootstrapCMS\Models\PostCategory;
 use Illuminate\Support\Facades\Response;
 use Exception;
@@ -260,12 +261,42 @@ class PostController extends AbstractController
 
     public function isFavoritedByMe($id)
     {
-
+      if(is_null($id)) {
+        throw new Exception('No post ID provided');
+      }
+      $post = PostRepository::find($id);
+      if(is_null($post)) {
+        throw new Exception('No post found with ID ' . $id);
+      }
+      $data = false;
+      $userId = Credentials::getuser()->id;
+      if (Favorite::whereUserId($userId)->wherePostId($post->id)->exists()){
+          $data = true;
+      }
+      return Response::json($data);
     }
 
     public function favorite()
     {
-      
+      $id = Input::get('id');
+      $post = PostRepository::find($id);
+      $userId = Credentials::getuser()->id;
+      $existing_favorite = Favorite::wherePostId($post->id)->whereUserId($userId)->first();
+
+      if (is_null($existing_favorite)) {
+          $existing_favorite = Favorite::create([
+              'post_id' => $post->id,
+              'user_id' => $userId
+          ]);
+      } else {
+          if (is_null($existing_favorite->deleted_at)) {
+              $existing_favorite->delete();
+          } else {
+              $existing_favorite->restore();
+          }
+      }
+
+      return Response::json($existing_favorite);
     }
 
 

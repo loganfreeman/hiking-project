@@ -120,7 +120,25 @@ $(document).ready(function() {
     $('#choose-category')[0].submit();
   });
   $('i.fa-bookmark').click(function() {
-    console.log('bookmark clicked');
+    var postId = $(this).data('id');
+    $.ajax({
+      url: '/post/favorite',
+      type: 'POST',
+      dataType: 'JSON',
+      data: {
+        id: postId
+      },
+      success: function(response) {
+        if(response.hasOwnProperty('deleted_at')) {
+          console.log('remove favorite')
+        }else {
+          console.log('add favorite')
+        }
+      },
+      error: function(response) {
+
+      }
+    })
   });
   $('i.fa-thumbs-o-up').click(function() {
     var postId = $(this).data('id');
@@ -132,10 +150,10 @@ $(document).ready(function() {
         id: postId
       },
       success: function(response) {
-        console.log(response.message);
+
       },
       error: function(response) {
-        console.log(response);
+
       }
     })
   });
