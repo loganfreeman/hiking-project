@@ -12,36 +12,6 @@ Blog
 
 @section('content')
 <div class="my-toolbar">
-
-    <div class="right-action-col">
-        <ul class="list-group">
-          @auth('blog')
-            <li class="list-group-item">
-              <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
-            </li>
-          @endauth
-          <li class="list-group-item">
-            <form id="choose-category" action="/blog/posts">
-              <div class="btn-group">
-                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose a category <span class="caret"></span>
-                </button>
-                <input type="hidden" name="category" id="category"></input>
-                <ul class="dropdown-menu">
-                  <li><a href="#" category="">None</a></li>
-                  @foreach ($categories as $category)
-                      <li><a href="#" category="{!! $category['name'] !!}">{!! $category['name'] !!}</a></li>
-                  @endforeach
-                </ul>
-              </div>
-            </form>
-          </li>
-        </ul>
-
-
-
-    </div>
-
     <div class="left-action-col">
       <form class="navbar-form" role="search" action="/search/posts" method="post">
           <div class="input-group add-on">
@@ -52,8 +22,8 @@ Blog
           </div>
         </form>
     </div>
-
 </div>
+
 <div class="posts-container">
 @foreach($posts as $post)
     <h2>{!! $post->title !!}</h2>
@@ -94,6 +64,38 @@ Blog
 @if (isset($links))
 {!! $links !!}
 @endif
+@stop
+
+@section('right-side')
+  <ul class="list-group">
+    @auth('blog')
+      <li class="list-group-item">
+        <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
+      </li>
+    @endauth
+    <li class="list-group-item">
+      <form id="choose-category" action="/blog/posts">
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Choose a category <span class="caret"></span>
+          </button>
+          <input type="hidden" name="category" id="category"></input>
+          <ul class="dropdown-menu">
+            <li><a href="#" category="">None</a></li>
+            @foreach ($categories as $category)
+                <li><a href="#" category="{!! $category['name'] !!}">{!! $category['name'] !!}</a></li>
+            @endforeach
+          </ul>
+        </div>
+      </form>
+    </li>
+  </ul>
+@stop
+
+@section('left-side')
+  <div class="ads">
+
+  </div>
 @stop
 
 @section('bottom')

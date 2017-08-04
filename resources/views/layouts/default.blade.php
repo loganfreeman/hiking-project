@@ -10,12 +10,22 @@
 <body>
 <div id="wrap">
 @navigation
-<div class="container">
-@section('top')
-@show
-@include('partials.notifications')
-@section('content')
-@show
+<div class="row content-wrapper">
+<div class="col-xs-12 col-sm-2 col-sm-push-10">
+  @section('right-side')
+  @show
+</div>
+<div class="col-xs-12 col-sm-8">
+  @section('top')
+  @show
+  @include('partials.notifications')
+  @section('content')
+  @show
+</div>
+<div class="col-xs-12 col-sm-2 col-sm-pull-10">
+  @section('left-side')
+  @show
+</div>
 @include('partials.footer')
 @section('bottom')
 @show

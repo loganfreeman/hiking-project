@@ -11,8 +11,13 @@ body {
     padding: 0 0 60px;
 }
 
-#wrap > .container {
+#wrap > .content-wrapper {
     padding: 60px 15px;
+}
+
+.ads {
+  min-height: 200px;
+  width: 100%;
 }
 
 .fa-2 {
