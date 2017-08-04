@@ -132,9 +132,11 @@ $(document).ready(function() {
       },
       success: function(response) {
         if(response.hasOwnProperty('deleted_at')) {
-          console.log('remove favorite')
+          console.log('remove favorite');
+          alert("favorite removed");
         }else {
-          console.log('add favorite')
+          console.log('add favorite');
+          alert('favorite added');
         }
       },
       error: function(response) {
