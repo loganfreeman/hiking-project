@@ -14,6 +14,11 @@
   <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" id="like" data-id="{{ $post->id }}"></i></a>
   @endauth
   <strong>{!! $likes !!} likes</strong>
+  @auth('user')
+  @if($post->isFavoritedByMe($user))
+    <i class="fa fa-heart fa-1" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
+  @endif
+  @endauth
   </div>
 
 @stop

@@ -10,6 +10,11 @@
  */
 
 namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+use GrahamCampbell\Credentials\Facades\Credentials;
+use GrahamCampbell\BootstrapCMS\Models\Favorite;
+use Illuminate\Support\Facades\Log;
+
+
 
 /**
  * This is the belongs to post trait.
@@ -31,5 +36,12 @@ trait PostsCanBeFavoredByManyUsers
      public function favoritesCount()
      {
        return count($this->favorites()->get());
+     }
+
+     public function isFavoritedByMe($user)
+     {
+       Log::debug("User id " . $user->id);
+       Log::debug("Poser id " . $this->id);
+       return Favorite::whereUserId($user->id)->wherePostId($this->id)->exists();
      }
 }

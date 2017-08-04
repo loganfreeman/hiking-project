@@ -58,7 +58,8 @@ class PostController extends AbstractController
     public function search(Request $request) {
       $term = $request->input('srch-term');
       $posts = PostRepository::search($term);
-      return View::make('posts.index', ['posts' => $posts]);
+      $categories = CategoryRepository::index();
+      return View::make('posts.index', ['posts' => $posts, 'categories' => $categories]);
     }
 
     /**
@@ -152,7 +153,9 @@ class PostController extends AbstractController
 
         $likes = count($post->likes()->get());
 
-        return View::make('posts.show', ['post' => $post, 'comments' => $comments, 'likes' => $likes]);
+        $user = Credentials::getuser();
+
+        return View::make('posts.show', ['post' => $post, 'comments' => $comments, 'likes' => $likes, 'user' => $user]);
     }
 
     /**
