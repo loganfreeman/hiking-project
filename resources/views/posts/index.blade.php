@@ -5,7 +5,7 @@ Blog
 @stop
 
 @section('top')
-<div class="page-header">
+<div class="top">
 <h1>犹他华人感兴趣的话题</h1>
 </div>
 @stop
@@ -67,7 +67,8 @@ Blog
 @stop
 
 @section('right-side')
-  <ul class="list-group">
+<div class="right-side">
+  <ul class="list-group borderless">
     @auth('blog')
       <li class="list-group-item">
         <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
@@ -89,7 +90,11 @@ Blog
         </div>
       </form>
     </li>
+    <li class="list-group-item">
+      <a class="btn btn-primary" href="{!! URL::route('blog.posts.index', ["favorited" => 1]) !!}"><i class="fa fa-heart"></i> My Favorited</a>
+    </li>
   </ul>
+</div>
 @stop
 
 @section('left-side')

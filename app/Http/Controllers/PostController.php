@@ -20,6 +20,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Http\Request;
 use GrahamCampbell\BootstrapCMS\Models\Like;
 use GrahamCampbell\BootstrapCMS\Models\Favorite;
+use GrahamCampbell\BootstrapCMS\Models\User;
 use GrahamCampbell\BootstrapCMS\Models\PostCategory;
 use Illuminate\Support\Facades\Response;
 use Exception;
@@ -74,13 +75,21 @@ class PostController extends AbstractController
 
         $category = $request->input('category');
 
-        if(empty($category)) {
-            $posts = PostRepository::paginate();
-            $links = PostRepository::links();
+        $favorited = $request->input('favorited');
+
+        if(!empty($category)) {
+          $posts = PostRepository::paginateWithCategory($category);
+          $links = PostRepository::links();
+
+        }
+        elseif(!empty($favorited))
+        {
+          $posts = PostRepository::paginateFavorited(Credentials::getuser()->id);
+          $links = PostRepository::links();
         }
         else
         {
-          $posts = PostRepository::paginateWithCategory($category);
+          $posts = PostRepository::paginate();
           $links = PostRepository::links();
         }
 

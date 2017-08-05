@@ -14,6 +14,8 @@ namespace GrahamCampbell\BootstrapCMS\Repositories;
 use GrahamCampbell\Credentials\Repositories\AbstractRepository;
 use GrahamCampbell\Credentials\Repositories\PaginateRepositoryTrait;
 use GrahamCampbell\BootstrapCMS\Models\Category;
+use GrahamCampbell\BootstrapCMS\Models\User;
+use GrahamCampbell\BootstrapCMS\Models\Post;
 use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
 
 /**
@@ -49,6 +51,21 @@ class PostRepository extends AbstractRepository
       }
 
       return $paginator;
+    }
+
+    public function paginateFavorited($userId)
+    {
+        $model = $this->model;
+        $paginator = $model::join('favorites', 'posts.id', '=', 'favorites.post_id')
+                ->join('users', 'favorites.user_id', '=', 'users.id')
+                ->where('favorites.user_id', $userId)->select('posts.*')
+                ->paginate($model::$paginate);
+
+        if (count($paginator)) {
+            $this->paginateLinks = $paginator->appends(['favorited' => 1])->render();
+        }
+
+        return $paginator;
     }
 
 

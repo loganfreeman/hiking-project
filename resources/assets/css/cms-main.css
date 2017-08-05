@@ -15,6 +15,10 @@ body {
     padding: 60px 15px;
 }
 
+ul.borderless > li {
+  border: 0 none;
+}
+
 .ads {
   min-height: 200px;
   width: 100%;
