@@ -84,8 +84,12 @@ class PostController extends AbstractController
         }
         elseif(!empty($favorited))
         {
-          $posts = PostRepository::paginateFavorited(Credentials::getuser()->id);
-          $links = PostRepository::links();
+          if(is_null(Credentials::getuser())) {
+            return Redirect::route('pages.index');
+          } else {
+            $posts = PostRepository::paginateFavorited(Credentials::getuser()->id);
+            $links = PostRepository::links();
+          }
         }
         else
         {
