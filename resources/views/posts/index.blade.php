@@ -71,13 +71,13 @@ Blog
   <ul class="list-group borderless">
     @auth('blog')
       <li class="list-group-item">
-        <a class="btn btn-primary" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
+        <a class="btn btn-warning" href="{!! URL::route('blog.posts.create') !!}"><i class="fa fa-book"></i> New Post</a>
       </li>
     @endauth
     <li class="list-group-item">
       <form id="choose-category" action="/blog/posts">
         <div class="btn-group">
-          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose a category <span class="caret"></span>
           </button>
           <input type="hidden" name="category" id="category"></input>
@@ -91,7 +91,7 @@ Blog
       </form>
     </li>
     <li class="list-group-item">
-      <a class="btn btn-primary" href="{!! URL::route('blog.posts.index', ["favorited" => 1]) !!}"><i class="fa fa-heart"></i> My Favorited</a>
+      <a class="btn btn-warning" href="{!! URL::route('blog.posts.index', ["favorited" => 1]) !!}"><i class="fa fa-heart"></i> My Favorited</a>
     </li>
   </ul>
 </div>
