@@ -90,9 +90,11 @@ Blog
         </div>
       </form>
     </li>
+    @auth('user')
     <li class="list-group-item">
       <a class="btn btn-warning" href="{!! URL::route('blog.posts.index', ["favorited" => 1]) !!}"><i class="fa fa-heart"></i> My Favorited</a>
     </li>
+    @endauth
   </ul>
 </div>
 @stop
