@@ -1,12 +1,20 @@
 @extends('layouts.default')
 
 @section('title')
-Blog
+  @if(!empty(app('request')->input('srch-term')))
+    {{ app('request')->input('srch-term') }}
+  @elseif (!empty(app('request')->input('category')))
+    {{ app('request')->input('category') }}
+  @elseif (!empty(app('request')->input('favorited')))
+    My favorited posts
+  @else
+    博客
+  @endif
 @stop
 
 @section('top')
 <div class="top">
-<h1>犹他华人感兴趣的话题</h1>
+
 </div>
 @stop
 
