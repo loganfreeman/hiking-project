@@ -60,7 +60,10 @@ class PostController extends AbstractController
       $term = $request->input('srch-term');
       $posts = PostRepository::search($term);
       $categories = CategoryRepository::index();
-      return View::make('posts.index', ['posts' => $posts, 'categories' => $categories]);
+
+      $user = Credentials::getuser();
+
+      return View::make('posts.index', ['posts' => $posts, 'categories' => $categories, 'user' => $user]);
     }
 
     /**
