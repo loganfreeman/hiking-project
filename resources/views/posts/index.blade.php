@@ -21,7 +21,7 @@
 @section('content')
 <div class="my-toolbar">
     <div class="left-action-col">
-      <form class="navbar-form" role="search" action="/search/posts" method="post">
+      <form class="navbar-form" role="search" action="/search/posts" method="get">
           <div class="input-group add-on">
             <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
             <div class="input-group-btn">

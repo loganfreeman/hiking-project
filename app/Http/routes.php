@@ -40,6 +40,8 @@ if (Config::get('cms.blogging')) {
 
 $router->post('search/posts', ['as' => 'searchPosts', 'uses' => 'PostController@search']);
 
+$router->get('search/posts', ['as' => 'searchPosts', 'uses' => 'PostController@search']);
+
 $router->get('post/{id}/islikedbyme', ['as' => 'isLikedByMe', 'uses' => 'PostController@isLikedByMe']);
 $router->post('post/like',  ['as' => 'like', 'uses' => 'PostController@like']);
 
