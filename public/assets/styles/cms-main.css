@@ -15,20 +15,20 @@ body {
     padding: 60px 15px;
 }
 
-.icon-bar {
+.action-bar {
   margin-bottom: 10px;
 }
 
-.icon-bar a {
+.action-bar a {
     text-align: center; /* Center-align text */
     transition: all 0.3s ease; /* Add transition for hover effects */
 }
 
-.icon-bar a:hover {
+.action-bar a:hover {
     background-color: #000; /* Add a hover color */
 }
 
-.icon-bar a ul {
+.action-bar a ul {
   display: inline-block;
 }
 

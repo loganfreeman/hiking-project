@@ -13,7 +13,7 @@
   <h1>{{ $post->title }}</h1>
   </div>
 
-  <div class="actions icon-bar">
+  <div class="actions action-bar">
   @auth('user')
   <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" id="like" data-id="{{ $post->id }}"></i></a>
   @endauth

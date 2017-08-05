@@ -49,7 +49,7 @@ Blog
       @endauth
     </ul>
 
-    <div class="actions">
+    <div class="actions action-bar">
       @auth('user')
       <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
       @endauth
