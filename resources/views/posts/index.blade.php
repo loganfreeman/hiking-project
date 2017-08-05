@@ -58,7 +58,7 @@ Blog
       <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
       <i class="fa fa-heart fa-1 {!! $post->isFavoritedByMe($user) ? "" : "hidden" !!}" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
       @endauth
-      <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+      <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 
     </div>
 @endforeach
