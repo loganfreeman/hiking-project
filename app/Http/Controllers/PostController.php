@@ -77,6 +77,8 @@ class PostController extends AbstractController
 
         $favorited = $request->input('favorited');
 
+        $user = Credentials::getuser();
+
         if(!empty($category)) {
           $posts = PostRepository::paginateWithCategory($category);
           $links = PostRepository::links();
@@ -99,7 +101,7 @@ class PostController extends AbstractController
 
 
 
-        return View::make('posts.index', ['posts' => $posts, 'links' => $links, 'categories' => $categories]);
+        return View::make('posts.index', ['posts' => $posts, 'links' => $links, 'categories' => $categories, 'user' => $user]);
     }
 
     /**

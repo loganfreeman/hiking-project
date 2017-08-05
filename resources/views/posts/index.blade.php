@@ -53,9 +53,10 @@ Blog
       @auth('user')
       <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
       @endauth
-      <span><strong>{!! $post->likesCount() !!} likes</strong></span>
+      <span><strong class="likesCount">{!! $post->likesCount() !!} likes</strong></span>
       @auth('user')
       <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
+      <i class="fa fa-heart fa-1 {!! $post->isFavoritedByMe($user) ? "" : "hidden" !!}" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
       @endauth
     </div>
 @endforeach
@@ -114,6 +115,16 @@ Blog
 @section('js')
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
 <script>
+function increaseLikeCount(element) {
+  var x = element.text();
+  var count = +x.replace(/\D/g,'') + 1;
+  element.text(count + " likes");
+}
+function decreaseLikeCount(element) {
+  var x = element.text();
+  var count = +x.replace(/\D/g,'') - 1;
+  element.text(count + " likes");
+}
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -131,6 +142,7 @@ $(document).ready(function() {
     $('#choose-category')[0].submit();
   });
   $('i.fa-bookmark').click(function() {
+    var heartElement = $('.fa-heart', this.closest('.actions'));
     var postId = $(this).data('id');
     $.ajax({
       url: '/post/favorite',
@@ -140,13 +152,7 @@ $(document).ready(function() {
         id: postId
       },
       success: function(response) {
-        if(response.hasOwnProperty('deleted_at')) {
-          console.log('remove favorite');
-          alert("favorite removed");
-        }else {
-          console.log('add favorite');
-          alert('favorite added');
-        }
+        heartElement.toggleClass('hidden');
       },
       error: function(response) {
 
@@ -154,6 +160,7 @@ $(document).ready(function() {
     })
   });
   $('i.fa-thumbs-o-up').click(function() {
+    var countElement = $('.likesCount', this.closest('.actions'));
     var postId = $(this).data('id');
     $.ajax({
       url: '/post/like',
@@ -163,7 +170,11 @@ $(document).ready(function() {
         id: postId
       },
       success: function(response) {
-
+        if(response.hasOwnProperty('deleted_at')) {
+          decreaseLikeCount(countElement);
+        }else {
+          increaseLikeCount(countElement);
+        }
       },
       error: function(response) {
 
