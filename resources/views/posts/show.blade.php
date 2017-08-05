@@ -4,6 +4,10 @@
 {{ $post->title }}
 @stop
 
+@section('custom-css')
+<link rel="stylesheet" src="{{ asset('assets/scripts/social-share/dist/social-share.min.css') }}">
+@stop
+
 @section('top')
   <div class="page-header">
   <h1>{{ $post->title }}</h1>
@@ -22,6 +26,8 @@
 
   <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 
+  <a id="share-wechat">
+  </a>
   </div>
 
 @stop
@@ -189,6 +195,13 @@ var cmsCommentInterval = {!! Config::get('cms.commentfetch') !!};
 var cmsCommentTime = {!! Config::get('cms.commenttrans') !!};
 </script>
 <script type="text/javascript" src="{{ asset('assets/scripts/cms-comment.js') }}"></script>
+<script src="{{ asset('assets/scripts/social-share/dist/social-share.min.js') }}"></script>
+<script>
+window.socialShare(document.getElementById('share-wechat'), [{
+    plugin: 'wechat',
+    url: "{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"
+}]);
+</script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

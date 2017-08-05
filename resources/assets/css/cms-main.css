@@ -28,6 +28,10 @@ body {
     background-color: #000; /* Add a hover color */
 }
 
+.icon-bar a ul {
+  display: inline-block;
+}
+
 ul.borderless > li {
   border: 0 none;
 }
