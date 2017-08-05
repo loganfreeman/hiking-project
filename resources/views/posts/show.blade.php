@@ -9,7 +9,7 @@
   <h1>{{ $post->title }}</h1>
   </div>
 
-  <div class="actions">
+  <div class="actions icon-bar">
   @auth('user')
   <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" id="like" data-id="{{ $post->id }}"></i></a>
   @endauth
@@ -19,6 +19,9 @@
     <i class="fa fa-heart fa-1" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
   @endif
   @endauth
+
+  <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+
   </div>
 
 @stop
@@ -186,4 +189,11 @@ var cmsCommentInterval = {!! Config::get('cms.commentfetch') !!};
 var cmsCommentTime = {!! Config::get('cms.commenttrans') !!};
 </script>
 <script type="text/javascript" src="{{ asset('assets/scripts/cms-comment.js') }}"></script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 @stop

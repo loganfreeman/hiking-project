@@ -15,6 +15,19 @@ body {
     padding: 60px 15px;
 }
 
+.icon-bar {
+  margin-bottom: 10px;
+}
+
+.icon-bar a {
+    text-align: center; /* Center-align text */
+    transition: all 0.3s ease; /* Add transition for hover effects */
+}
+
+.icon-bar a:hover {
+    background-color: #000; /* Add a hover color */
+}
+
 ul.borderless > li {
   border: 0 none;
 }
