@@ -104,4 +104,14 @@ class Event extends AbstractModel implements HasPresenter
     {
         return 'GrahamCampbell\BootstrapCMS\Presenters\EventPresenter';
     }
+
+    public function signups()
+    {
+        return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\User', 'event_signups');
+    }
+
+    public function signupsCount()
+    {
+      return count($this->signups()->get());
+    }
 }

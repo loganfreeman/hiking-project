@@ -23,7 +23,7 @@ trait UserHasManyEventsTrait
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-     public function event_signups()
+     public function signups()
      {
          return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\Event', 'event_signups', 'user_id', 'event_id');
      }
