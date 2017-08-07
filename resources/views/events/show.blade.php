@@ -8,6 +8,14 @@
 <div class="page-header">
 <h1>{{ $event->title }}</h1>
 </div>
+
+<div class="actions action-bar">
+@auth('user')
+<a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" id="like" data-id="{{ $event->id }}"></i></a>
+@endauth
+
+<div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('events' => $event->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+</div>
 @stop
 
 @section('content')
@@ -76,4 +84,15 @@
 @auth('edit')
 @include('events.delete')
 @endauth
+@stop
+
+@section('js')
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 @stop
