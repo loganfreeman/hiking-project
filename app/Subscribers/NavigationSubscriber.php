@@ -141,6 +141,11 @@ class NavigationSubscriber
      */
     public function onNavigationMainFirst()
     {
+
+        $this->navigation->addToMain(
+            ['title' => 'News', 'slug' => 'news', 'icon' => 'rss']
+        );
+
         // add the blog
         if ($this->blogging) {
             $this->navigation->addToMain(

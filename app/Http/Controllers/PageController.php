@@ -219,7 +219,7 @@ class PageController extends AbstractController
         }
 
         if ($slug == 'home') {
-            throw new Exception('The homepage is missing.');
+            //throw new Exception('The homepage is missing.');
         }
 
         throw new NotFoundHttpException('Page Not Found');
