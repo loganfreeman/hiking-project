@@ -26,7 +26,9 @@ class Kernel extends ConsoleKernel
      *
      * @var string[]
      */
-    protected $commands = [];
+    protected $commands = [
+      Commands\Install::class
+    ];
 
     /**
      * Define the application's command schedule.
