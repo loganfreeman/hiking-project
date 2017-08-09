@@ -32,43 +32,56 @@
     </div>
 </div>
 
-<div class="posts-container">
+<div class="posts-container card-grid">
 @foreach($posts as $post)
-    <h2>{!! $post->title !!}</h2>
-    <p>
-        <strong>{!! $post->summary !!}</strong>
-    </p>
-    <p>
-      @foreach ($post->categories as $category)
-          <span class="badge">{!! $category['name'] !!}</span>
-      @endforeach
-    </p>
+    <div class="card-wrap">
+      <div class="card">
 
-    @if($post->hasImage())
-      <div class="post-image">
-        <img src="{{ URL::to($post->imagePath()) }}" />
+        <div>
+          <h2>{!! $post->title !!}</h2>
+          <p>
+              <strong>{!! $post->summary !!}</strong>
+          </p>
+          <p>
+            @foreach ($post->categories as $category)
+                <span class="badge">{!! $category['name'] !!}</span>
+            @endforeach
+          </p>
+
+          @if($post->hasImage())
+            <div class="post-image">
+              <img src="{{ URL::to($post->imagePath()) }}" />
+            </div>
+          @endif
+
+          <ul class="list-group">
+            <a class="btn btn-success btn-secondary" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-toggle="tooltip" title="Show Post"><i class="fa fa-file-text" ></i></a>
+            @auth('blog')
+              <a class="btn btn-info btn-secondary" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}" data-toggle="tooltip" title="Edit Post"><i class="fa fa-pencil-square-o" ></i></a>
+              <strong data-toggle="tooltip" title="Delete Post!"><a class="btn btn-danger btn-secondary" href="#delete_post_{!! $post->id !!}" data-toggle="modal" data-target="#delete_post_{!! $post->id !!}" ><i class="fa fa-times" ></i></a></strong>
+            @endauth
+          </ul>
+
+          <div class="actions action-bar">
+            @auth('user')
+            <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
+            @endauth
+            <span><strong class="likesCount">{!! $post->likesCount() !!} likes</strong></span>
+            @auth('user')
+            <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
+            <i class="fa fa-heart fa-1 {!! $post->isFavoritedByMe($user) ? "" : "hidden" !!}" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
+            @endauth
+            <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+
+          </div>
+        </div>
       </div>
-    @endif
-    <ul class="list-group">
-      <a class="btn btn-success btn-secondary" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}"><i class="fa fa-file-text"></i> Show Post</a>
-      @auth('blog')
-        <a class="btn btn-info btn-secondary" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}"><i class="fa fa-pencil-square-o"></i> Edit Post</a>
-        <a class="btn btn-danger btn-secondary" href="#delete_post_{!! $post->id !!}" data-toggle="modal" data-target="#delete_post_{!! $post->id !!}"><i class="fa fa-times"></i> Delete Post</a>
-      @endauth
-    </ul>
-
-    <div class="actions action-bar">
-      @auth('user')
-      <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
-      @endauth
-      <span><strong class="likesCount">{!! $post->likesCount() !!} likes</strong></span>
-      @auth('user')
-      <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
-      <i class="fa fa-heart fa-1 {!! $post->isFavoritedByMe($user) ? "" : "hidden" !!}" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
-      @endauth
-      <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 
     </div>
+
+
+
+
 @endforeach
 </div>
 
@@ -103,7 +116,7 @@
     </li>
     @auth('user')
     <li class="list-group-item">
-      <a class="btn btn-warning" href="{!! URL::route('blog.posts.index', ["favorited" => 1]) !!}"><i class="fa fa-heart"></i> My Favorited</a>
+      <a class="btn btn-warning" href="{!! URL::route('blog.posts.index', ["favorited" => 1]) !!}"><i class="fa fa-heart"></i> My Favorite</a>
     </li>
     @endauth
   </ul>

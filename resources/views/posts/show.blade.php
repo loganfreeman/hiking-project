@@ -18,6 +18,7 @@
   @endauth
   <strong class="likesCount">{!! $likes !!} likes</strong>
   @auth('user')
+  <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
   @if($post->isFavoritedByMe($user))
     <i class="fa fa-heart fa-1" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
   @endif
@@ -191,6 +192,51 @@ var cmsCommentInterval = {!! Config::get('cms.commentfetch') !!};
 var cmsCommentTime = {!! Config::get('cms.commenttrans') !!};
 </script>
 <script type="text/javascript" src="{{ asset('assets/scripts/cms-comment.js') }}"></script>
+<script>
+$(document).ready(function() {
+  $('#like').click(function() {
+    var countElement = $('.likesCount', this.closest('.actions'));
+    var postId = $(this).data('id');
+    $.ajax({
+      url: '/post/like',
+      type: 'POST',
+      dataType: 'JSON',
+      data: {
+        id: postId
+      },
+      success: function(response) {
+        if(response.hasOwnProperty('deleted_at')) {
+          decreaseLikeCount(countElement);
+        }else {
+          increaseLikeCount(countElement);
+        }
+      },
+      error: function(response) {
+        console.log(response);
+      }
+    })
+  });
+
+  $('i.fa-bookmark').click(function() {
+    var heartElement = $('.fa-heart', this.closest('.actions'));
+    var postId = $(this).data('id');
+    $.ajax({
+      url: '/post/favorite',
+      type: 'POST',
+      dataType: 'JSON',
+      data: {
+        id: postId
+      },
+      success: function(response) {
+        heartElement.toggleClass('hidden');
+      },
+      error: function(response) {
+
+      }
+    })
+  });
+});
+</script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

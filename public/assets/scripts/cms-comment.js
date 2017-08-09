@@ -438,27 +438,5 @@ $(document).ready(function() {
   cmsCommentDelete();
   cmsCommentCreate();
   cmsCommentFetch();
-  cmsCommentLock = false;
-  $('#like').click(function() {
-    var countElement = $('.likesCount', this.closest('.actions'));
-    var postId = $(this).data('id');
-    $.ajax({
-      url: '/post/like',
-      type: 'POST',
-      dataType: 'JSON',
-      data: {
-        id: postId
-      },
-      success: function(response) {
-        if(response.hasOwnProperty('deleted_at')) {
-          decreaseLikeCount(countElement);
-        }else {
-          increaseLikeCount(countElement);
-        }
-      },
-      error: function(response) {
-        console.log(response);
-      }
-    })
-  });
+  cmsCommentLock = false;  
 });
