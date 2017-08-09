@@ -38,6 +38,8 @@ if (Config::get('cms.blogging')) {
     }]);
 }
 
+$router->get('news', ['as' => 'news', 'uses' => 'PostController@news']);
+
 $router->post('search/posts', ['as' => 'searchPosts', 'uses' => 'PostController@search']);
 
 $router->get('search/posts', ['as' => 'searchPosts', 'uses' => 'PostController@search']);

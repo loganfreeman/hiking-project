@@ -56,6 +56,12 @@ class PostController extends AbstractController
         parent::__construct();
     }
 
+    public function news(Request $request) {
+      $term = $request->input('srch-term');
+
+      return View::make('posts.news', ['term' => $term]);
+    }
+
     public function search(Request $request) {
       $term = $request->input('srch-term');
       $posts = PostRepository::search($term);
