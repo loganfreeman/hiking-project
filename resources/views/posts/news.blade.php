@@ -44,6 +44,13 @@
         </form>
       </div>
   </div>
+
+  <div class="results">
+
+    @foreach ($results as $result)
+      
+    @endforeach
+  </div>
 @stop
 
 @section('js')

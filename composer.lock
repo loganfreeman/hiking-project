@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2aae5dc6f628c7b19f53a5f94f0c7170",
-    "content-hash": "19bbd4e3b11a7480bac23c7b1f167581",
+    "hash": "dac1d98b33e29bf45ff53bca894286c3",
+    "content-hash": "efb94a888ce1240ad9575b1f291476ff",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -1445,6 +1445,54 @@
                 }
             ],
             "time": "2015-04-20 18:58:01"
+        },
+        {
+            "name": "jan-drda/laravel-google-custom-search-engine",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jdrda/laravel-google-custom-search-engine.git",
+                "reference": "d5a6814afb97b3f2e65a49828e08f7e73cbeda33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jdrda/laravel-google-custom-search-engine/zipball/d5a6814afb97b3f2e65a49828e08f7e73cbeda33",
+                "reference": "d5a6814afb97b3f2e65a49828e08f7e73cbeda33",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.0.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JanDrda\\LaravelGoogleCustomSearchEngine": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Drda",
+                    "email": "jdrda@outlook.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel package to get Google Custom Search results from Google Custom Search Engine API for both free and paid version.",
+            "homepage": "https://github.com/jdrda/laravel-google-custom-search-engine",
+            "keywords": [
+                "custom",
+                "engine",
+                "free",
+                "google",
+                "laravel",
+                "paid",
+                "search"
+            ],
+            "time": "2016-12-14 10:55:51"
         },
         {
             "name": "jeremeamia/SuperClosure",

@@ -32,7 +32,8 @@
     "mccool/laravel-auto-presenter": "~3.0",
     "guzzlehttp/guzzle": "~5.3|~6.0",
     "matriphe/imageupload": "5.*",
-    "spatie/googlesearch": "^2.0"
+    "spatie/googlesearch": "^2.0",
+    "jan-drda/laravel-google-custom-search-engine": "^1.0"
   },
   "require-dev": {
     "doctrine/dbal": "~2.5",
