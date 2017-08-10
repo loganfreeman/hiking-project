@@ -23,7 +23,7 @@ echo "-- Install NodeJS --"
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
 echo "-- Install packages --"
-sudo apt-get install -y --force-yes sudo apt-get install -y build-essential apache2 mysql-server git-core nodejs rabbitmq-server redis-server
+sudo apt-get install -y --force-yes build-essential apache2 mysql-server git-core nodejs rabbitmq-server redis-server
 sudo apt-get install -y --force-yes php7.0-common php7.0-dev php7.0-json php7.0-opcache php7.0-cli libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-mcrypt php7.0-mbstring php7.0-bcmath php7.0-zip
 Update
 
