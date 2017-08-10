@@ -2,3 +2,5 @@
 phpunit.xml
 vendor
 node_modules
+.idea/
+.vagrant/
