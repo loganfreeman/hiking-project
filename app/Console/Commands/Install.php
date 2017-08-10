@@ -6,6 +6,8 @@ use Illuminate\Console\Command;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Events\Dispatcher;
 
+use GrahamCampbell\BootstrapCMS\Seeds\CategoriesTableSeeder;
+
 class Install extends Command implements SelfHandling
 {
 
@@ -41,6 +43,7 @@ class Install extends Command implements SelfHandling
      */
     public function handle()
     {
-        print($this->name);
+        $seeder = new CategoriesTableSeeder;
+        $seeder->run();
     }
 }

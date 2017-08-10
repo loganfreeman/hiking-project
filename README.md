@@ -1,17 +1,31 @@
-Bootstrap CMS
-=============
+# Vagrant PHP7
 
-Bootstrap CMS was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a PHP CMS powered by [Laravel 5.1](http://laravel.com) and [Sentry](https://cartalyst.com/manual/sentry). It utilises many of my packages including [Laravel Core](https://github.com/GrahamCampbell/Laravel-Core) and [Laravel Credentials](https://github.com/BootstrapCMS/Credentials). Feel free to check out the [releases](https://github.com/BootstrapCMS/CMS/releases), [license](LICENSE), [screenshots](SCREENSHOTS.md), and [contribution guidelines](CONTRIBUTING.md).
+A simple Vagrant LAMP setup running PHP7.
 
-![Bootstrap CMS](https://cloud.githubusercontent.com/assets/2829600/4432327/c1ae6436-468c-11e4-84eb-4e5e546da3ff.PNG)
+## What's inside?
 
-<p align="center">
-<a href="https://travis-ci.org/BootstrapCMS/CMS"><img src="https://img.shields.io/travis/BootstrapCMS/CMS/master.svg?style=flat-square" alt="Build Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/BootstrapCMS/CMS/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/BootstrapCMS/CMS.svg?style=flat-square" alt="Coverage Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/BootstrapCMS/CMS"><img src="https://img.shields.io/scrutinizer/g/BootstrapCMS/CMS.svg?style=flat-square" alt="Quality Score"></img></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL%203.0-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
-<a href="https://github.com/BootstrapCMS/CMS/releases"><img src="https://img.shields.io/github/release/BootstrapCMS/CMS.svg?style=flat-square" alt="Latest Version"></img></a>
-</p>
+- Ubuntu 14.04.3 LTS (Trusty Tahr)
+- Vim, Git, Curl, etc.
+- Apache
+- PHP7 with some extensions
+- MySQL 5.6
+- Node.js with NPM
+- RabbitMQ
+- Redis
+- Composer
+- phpMyAdmin
+
+## How to use
+
+- Clone this repository into your project
+- Run ``vagrant up``
+- Add the following lines to your hosts file:
+````
+192.168.100.100 app.dev
+192.168.100.100 phpmyadmin.dev
+````
+- Navigate to ``http://app.dev/``
+- Navigate to ``http://phpmyadmin.dev/`` (both username and password are 'root')
 
 
 ## Installation
@@ -76,25 +90,3 @@ Bootstrap CMS can read [CloudFlare](https://www.cloudflare.com/) analytic data t
 
 1. Follow the install instructions for my [Laravel CloudFlare](https://github.com/BootstrapCMS/CloudFlare) package.
 2. Bootstrap CMS will auto-detect the package, only allow admin access, and add links to the navigation bar.
-
-
-## License
-
-GNU AFFERO GENERAL PUBLIC LICENSE
-
-Bootstrap CMS Is A PHP CMS Powered By Laravel 5 And Sentry
-
-Copyright (C) 2013-2015 Graham Campbell
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
