@@ -118,6 +118,10 @@ return [
 
     'log' => env('APP_LOG', 'daily'),
 
+    'search_engine_id' => env('SEARCH_ENGINE_ID'),
+
+    'search_api_key' => env('SEARCH_API_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

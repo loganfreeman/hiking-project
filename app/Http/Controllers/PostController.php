@@ -29,6 +29,7 @@ use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
 use Illuminate\Support\Facades\Log;
 use GrahamCampbell\BootstrapCMS\Models\Post;
 use Imageupload;
+use GrahamCampbell\BootstrapCMS\API\GoogleCustomSearch;
 
 /**
  * This is the post controller class.
@@ -58,7 +59,9 @@ class PostController extends AbstractController
     public function news(Request $request) {
       $term = $request->input('srch-term');
 
-      $results = [];
+      $search = new GoogleCustomSearch(config('app.search_engine_id'), config('app.search_api_key'));
+      $results = $search->search('Apples');
+
       Log::debug($term. ' Search results: ' . count($results));
       return View::make('posts.news', ['term' => $term, 'results' => $results]);
     }
