@@ -171,6 +171,7 @@ return [
         'GrahamCampbell\BootstrapCMS\Providers\AppServiceProvider',
         'GrahamCampbell\BootstrapCMS\Providers\RouteServiceProvider',
         'Matriphe\Imageupload\ImageuploadServiceProvider',
+        'Spatie\GoogleSearch\GoogleSearchServiceProvider',
 
     ],
 
@@ -218,6 +219,7 @@ return [
         'Validator'   => 'Illuminate\Support\Facades\Validator',
         'View'        => 'Illuminate\Support\Facades\View',
         'Imageupload' => 'Matriphe\Imageupload\ImageuploadFacade',
+        'GoogleSearch' => 'Spatie\GoogleSearch\Facades\GoogleSearch',
 
     ],
 

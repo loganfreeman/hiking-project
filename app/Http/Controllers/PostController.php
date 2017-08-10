@@ -29,7 +29,7 @@ use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
 use Illuminate\Support\Facades\Log;
 use GrahamCampbell\BootstrapCMS\Models\Post;
 use Imageupload;
-
+use GoogleSearch;
 
 /**
  * This is the post controller class.
@@ -59,7 +59,9 @@ class PostController extends AbstractController
     public function news(Request $request) {
       $term = $request->input('srch-term');
 
-      return View::make('posts.news', ['term' => $term]);
+      $searchResults = GoogleSearch::getResults($term);
+
+      return View::make('posts.news', ['term' => $term, 'results' => $searchResults]);
     }
 
     public function search(Request $request) {

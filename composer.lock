@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "25565a4cfb06929803f2c760551b9a06",
-    "content-hash": "18d4786c70bc6a2904c214008f009e6b",
+    "hash": "2aae5dc6f628c7b19f53a5f94f0c7170",
+    "content-hash": "19bbd4e3b11a7480bac23c7b1f167581",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -2381,6 +2381,55 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "spatie/googlesearch",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/googlesearch.git",
+                "reference": "cf38d2ca25c92d79af5e0f805bb0af466962eecd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/googlesearch/zipball/cf38d2ca25c92d79af5e0f805bb0af466962eecd",
+                "reference": "cf38d2ca25c92d79af5e0f805bb0af466962eecd",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2.1",
+                "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "2.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Spatie\\GoogleSearch": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be"
+                }
+            ],
+            "description": "Get searchresults from a Google Custom Search Engine",
+            "homepage": "https://github.com/spatie/googlesearch",
+            "keywords": [
+                "custom",
+                "engine",
+                "google",
+                "laravel",
+                "search"
+            ],
+            "time": "2016-10-05 07:09:42"
         },
         {
             "name": "swiftmailer/swiftmailer",

@@ -44,10 +44,19 @@
         </form>
       </div>
   </div>
+@stop
 
-
-
-
-
-
+@section('js')
+  <script>
+    (function() {
+      var cx = '000916868871667990538:wx2qdizvso0';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+  <gcse:search></gcse:search>
 @stop
