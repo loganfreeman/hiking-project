@@ -48,7 +48,6 @@
   <div class="results">
 
     @foreach ($results as $result)
-      {{ print_r($result, true) }}
     @endforeach
   </div>
 @stop

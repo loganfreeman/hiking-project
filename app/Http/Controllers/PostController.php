@@ -62,6 +62,7 @@ class PostController extends AbstractController
       $search = new GoogleCustomSearch(config('app.search_engine_id'), config('app.search_api_key'));
       try {
         $results = $search->search($term);
+        Log::info(print_r($results, true));
       }catch(Exception $e) {
         Log::error($e->getMessage());
         $results = [];
