@@ -60,7 +60,11 @@ class PostController extends AbstractController
       $term = $request->input('srch-term');
 
       $search = new GoogleCustomSearch(config('app.search_engine_id'), config('app.search_api_key'));
-      $results = $search->search('Apples');
+      try {
+        $results = $search->search('Apples');
+      }catch($e) {
+        $results = [];
+      }
 
       Log::debug($term. ' Search results: ' . count($results));
       return View::make('posts.news', ['term' => $term, 'results' => $results]);
