@@ -69,7 +69,7 @@ class PostController extends AbstractController
       }
 
       Log::debug($term. ' Search results: ' . count($results));
-      return View::make('posts.news', ['term' => $term, 'results' => $results]);
+      return View::make('posts.news', ['term' => $term, 'results' => $results['results']]);
     }
 
     public function search(Request $request) {
