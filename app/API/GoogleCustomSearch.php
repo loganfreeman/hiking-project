@@ -75,9 +75,9 @@ class GoogleCustomSearch
         ]);
         // use cURL if avaible, otherwise fallback to file_get_contents
         if (function_exists('curl_version')) {
-            $response = $this->getSslPage('https://www.googleapis.com/customsearch/v1?' . http_build_query($params));
+            $response = $this->getSslPage('https://www.googleapis.com/customsearch/v1element?' . http_build_query($params));
         } else {
-            $response = file_get_contents('https://www.googleapis.com/customsearch/v1?' . http_build_query($params), false, $context);
+            $response = file_get_contents('https://www.googleapis.com/customsearch/v1element?' . http_build_query($params), false, $context);
         }
         return json_decode($response);
     }
@@ -122,27 +122,7 @@ class GoogleCustomSearch
         if (isset($response->error)) {
             throw new \Exception($response->error->message);
         }
-        $request_info = $response->queries->request[0];
-        $results = new \stdClass();
-        $results->page = $page;
-        $results->perPage = $per_page;
-        $results->start = $request_info->startIndex;
-        $results->end = ($request_info->startIndex + $request_info->count) - 1;
-        $results->totalResults = $request_info->totalResults;
-        $results->results = [];
-        if (isset($response->items)) {
-            foreach ($response->items as $result) {
-                $results->results[] = (object) [
-                    'title' => $result->title,
-                    'snippet' => $result->snippet,
-                    'htmlSnippet' => $result->htmlSnippet,
-                    'link' => $result->link,
-                    'image' => isset($result->pagemap->cse_image) ? $result->pagemap->cse_image[0]->src : '',
-                    'thumbnail' => isset($result->pagemap->cse_thumbnail) ? $result->pagemap->cse_thumbnail[0]->src : '',
-                ];
-            }
-        }
-        return $results;
+        return $response;
     }
     /**
      * Allow call to api under https using cURL - replacement function for file_get_contents

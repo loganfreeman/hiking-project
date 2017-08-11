@@ -45,9 +45,25 @@
       </div>
   </div>
 
+  <hr>
+
   <div class="results">
 
     @foreach ($results as $result)
+
+      <div class="card">
+          <!--Card content-->
+          <div class="card-body">
+              <p class="card-text">{!! $result->content !!}</p>
+              <a href="{{ $result->url }}">
+                {!! $result->title !!}
+              </a>
+          </div>
+
+      </div>
+
+      <br>
+
     @endforeach
   </div>
 @stop
