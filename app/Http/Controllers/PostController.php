@@ -59,6 +59,10 @@ class PostController extends AbstractController
     public function news(Request $request) {
       $term = $request->input('srch-term');
 
+      if(empty($term)) {
+        $term = "hike the wasatch";
+      }
+
       $search = new GoogleCustomSearch(config('app.search_engine_id'), config('app.search_api_key'));
       $results = $search->search($term);
       Log::debug(print_r($results, true));
