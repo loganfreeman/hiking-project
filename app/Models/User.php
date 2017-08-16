@@ -52,4 +52,9 @@ class User extends CredentialsUser
         $this->deleteComments();
     }
 
+    public function getFullNameAttribute()
+    {
+      return $this->first_name . ' ' . $this->last_name;
+    }
+
 }

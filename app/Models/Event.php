@@ -121,4 +121,18 @@ class Event extends AbstractModel implements HasPresenter
     {
       return EventSignups::whereUserId($user->id)->whereEventId($this->id)->exists();
     }
+
+    public function signupedUsers() {
+      return array_map(function($o) { return $o['first_name'] . ' ' . $o['last_name']; }, $this->signups->toArray());
+    }
+
+    public function getRegisteredUsersCountAttribute()
+    {
+      return count($this->registered_users);
+    }
+
+    public function getRegisteredUsersAttribute()
+    {
+      return array_map(function($o) { return $o['first_name'] . ' ' . $o['last_name']; }, $this->signups->toArray());
+    }
 }

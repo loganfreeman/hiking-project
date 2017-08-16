@@ -82,6 +82,17 @@
         {!! str_replace('<p>', '<p class="lead">', $event->content) !!}
     </div>
 </div>
+
+<div class="clearfix">
+  <strong>{{ $event->registered_users_count }} user{{ $event->registered_users_count > 1 ? 's' : '' }} are going </strong>
+  <br>
+  <ul class="list-inline">
+  @foreach ($event->registered_users as $user)
+    <li class="list-inline-item">{{ $user }}</li>
+  @endforeach
+  </ul>
+  <br>
+</div>
 @stop
 
 @section('bottom')
