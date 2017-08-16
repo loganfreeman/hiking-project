@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Support\Facades\Input;
+use GrahamCampbell\BootstrapCMS\Models\EventSignups;
+use Illuminate\Support\Facades\Response;
+use Exception;
+
+
 
 /**
  * This is the event controller class.
@@ -75,7 +81,8 @@ class EventController extends AbstractController
      */
     public function store()
     {
-        $input = array_merge(['user_id' => Credentials::getuser()->id], Binput::only([
+        $user = Credentials::getuser();
+        $input = array_merge(['user_id' => $user->id], Binput::only([
             'title', 'location', 'date', 'body',
         ]));
 
@@ -88,7 +95,7 @@ class EventController extends AbstractController
 
         $event = EventRepository::create($input);
 
-        return Redirect::route('events.show', ['events' => $event->id])
+        return Redirect::route('events.show', ['events' => $event->id, 'user' => $user])
             ->with('success', trans('messages.event.store_success'));
     }
 
@@ -103,8 +110,50 @@ class EventController extends AbstractController
     {
         $event = EventRepository::find($id);
         $this->checkEvent($event);
+        $user = Credentials::getuser();
 
-        return View::make('events.show', ['event' => $event]);
+        return View::make('events.show', ['event' => $event, 'user' => $user]);
+    }
+
+    public function isSignupedbyme($id)
+    {
+      if(is_null($id)) {
+        throw new Exception('No event ID provided');
+      }
+      $event = EventRepository::find($id);
+      if(is_null($event)) {
+        throw new Exception('No event found with ID ' . $id);
+      }
+      $data = false;
+      $userId = Credentials::getuser()->id;
+      if (EventSignups::whereUserId($userId)->whereEventId($event->id)->exists()){
+          $data = true;
+      }
+      return Response::json($data);
+    }
+
+
+    public function signup()
+    {
+        $id = Input::get('id');
+        $event = EventRepository::find($id);
+        $userId = Credentials::getuser()->id;
+        $existing_signup = EventSignups::whereEventId($event->id)->whereUserId($userId)->first();
+
+        if (is_null($existing_signup)) {
+            $existing_signup = EventSignups::create([
+                'event_id' => $event->id,
+                'user_id' => $userId
+            ]);
+        } else {
+            if (is_null($existing_signup->deleted_at)) {
+                $existing_signup->delete();
+            } else {
+                $existing_signup->restore();
+            }
+        }
+
+        return Response::json($existing_signup);
     }
 
     /**
@@ -132,6 +181,7 @@ class EventController extends AbstractController
     public function update($id)
     {
         $input = Binput::only(['title', 'location', 'date', 'body']);
+        $user = Credentials::getuser();
 
         $val = $val = EventRepository::validate($input, array_keys($input));
         if ($val->fails()) {
@@ -145,7 +195,7 @@ class EventController extends AbstractController
 
         $event->update($input);
 
-        return Redirect::route('events.show', ['events' => $event->id])
+        return Redirect::route('events.show', ['events' => $event->id, 'user' => $user])
             ->with('success', trans('messages.event.update_success'));
     }
 

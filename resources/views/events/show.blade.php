@@ -11,10 +11,14 @@
 
 <div class="actions action-bar">
 @auth('user')
-<a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" id="like" data-id="{{ $event->id }}"></i></a>
+<a class="icons-sm" id="signup" data-id="{{ $event->id }}">
+  <i class="fa fa-1 {{ $event->isSignupedbyme($user) ? 'fa-thumbs-o-down' : 'fa-thumbs-o-up' }}" aria-hidden="true"></i>
+</a>
+<strong>  {{ $event->isSignupedbyme($user) ? 'You\'re going' : 'You\'re not going' }} </strong>
+
 @endauth
 
-<div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('events' => $event->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+<div class="fb-share-button" data-href="{!! URL::route('events.show', array('events' => $event->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 </div>
 @stop
 
@@ -88,6 +92,44 @@
 
 @section('js')
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script>
+function updateSignup(signupBtn, signedup)
+{
+  var signupBtnText = signupBtn.next('strong');
+  var icon = signupBtn.children('i');
+  icon.toggleClass('fa-thumbs-o-up');
+  icon.toggleClass('fa-thumbs-o-down');
+  if(signedup){
+    signupBtnText.text('You\'re going');
+  }else{
+    signupBtnText.text('You\'re not going');
+  }
+}
+$(document).ready(function() {
+  $('#signup').click(function() {
+    var signupBtn = $(this);
+    var eventId = $(this).data('id');
+    $.ajax({
+      url: '/event/signup',
+      type: 'POST',
+      dataType: 'JSON',
+      data: {
+        id: eventId
+      },
+      success: function(response) {
+        if(response.hasOwnProperty('deleted_at')) {
+          updateSignup(signupBtn, false);
+        }else {
+          updateSignup(signupBtn, true);
+        }
+      },
+      error: function(response) {
+        console.log(response);
+      }
+    })
+  });
+})
+</script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;

@@ -62,4 +62,6 @@ if (Config::get('cms.blogging')) {
 // event routes
 if (Config::get('cms.events')) {
     $router->resource('events', 'EventController');
+    $router->post('event/signup',  ['as' => 'event_signup', 'uses' => 'EventController@signup']);
+    $router->get('event/{id}/isSignupedbyme', ['as' => 'isSignupedbyme', 'uses' => 'EventController@isSignupedbyme']);
 }

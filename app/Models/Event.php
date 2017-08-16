@@ -16,6 +16,8 @@ use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
+use GrahamCampbell\BootstrapCMS\Models\EventSignups;
+
 
 /**
  * This is the event model class.
@@ -113,5 +115,10 @@ class Event extends AbstractModel implements HasPresenter
     public function signupsCount()
     {
       return count($this->signups()->get());
+    }
+
+    public function isSignupedbyme($user)
+    {
+      return EventSignups::whereUserId($user->id)->whereEventId($this->id)->exists();
     }
 }
