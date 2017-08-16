@@ -88,7 +88,7 @@
   <br>
   <ul class="list-inline">
   @foreach ($event->registered_users as $user)
-    <li class="list-inline-item">{{ $user }}</li>
+    <li class="list-inline-item"><span class="badge">{{ $user }}</span></li>
   @endforeach
   </ul>
   <br>
