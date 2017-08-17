@@ -31,7 +31,8 @@
     "graham-campbell/throttle": "~4.0",
     "mccool/laravel-auto-presenter": "~3.0",
     "guzzlehttp/guzzle": "~5.3|~6.0",
-    "matriphe/imageupload": "5.*"
+    "matriphe/imageupload": "5.*",
+    "nicolaslopezj/searchable": "1.*"
   },
   "require-dev": {
     "doctrine/dbal": "~2.5",

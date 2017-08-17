@@ -29,7 +29,7 @@ class PostRepository extends AbstractRepository
 
     public function search($term) {
       $model = $this->model;
-      return $model::search($term);
+      return $model::searchByTitle($term);
     }
 
     public function findByCategory($category_name)

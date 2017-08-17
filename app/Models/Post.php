@@ -21,6 +21,7 @@ use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 use Illuminate\Support\Facades\Log;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 
 /**
@@ -30,7 +31,7 @@ use Illuminate\Support\Facades\Log;
  */
 class Post extends AbstractModel implements HasPresenter
 {
-    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes, BelongsToManyUsersTrait, PostBelongsToManyCategoriesTrait, PostsCanBeFavoredByManyUsers;
+    use HasManyCommentsTrait, BelongsToUserTrait, RevisionableTrait, SoftDeletes, BelongsToManyUsersTrait, PostBelongsToManyCategoriesTrait, PostsCanBeFavoredByManyUsers, SearchableTrait;
 
     /**
      * The table the posts are stored in.
@@ -102,7 +103,33 @@ class Post extends AbstractModel implements HasPresenter
         'user_id' => 'required',
     ];
 
-    public static function search($term) {
+    /**
+     * Searchable rules.
+     *
+     * @var array
+     */
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        'columns' => [
+            'users.first_name' => 1,
+            'users.last_name' => 1,
+            'users.email' => 2,
+            'posts.title' => 10,
+            'posts.summary' => 10,
+            'posts.body' => 5,
+        ],
+        'joins' => [
+            'users' => ['posts.user_id','users.id'],
+        ],
+    ];
+
+    public static function searchByTitle($term) {
       return static::where('title', 'like', '%' . $term . '%')->get();
     }
 
