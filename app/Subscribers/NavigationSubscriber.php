@@ -146,6 +146,10 @@ class NavigationSubscriber
             ['title' => 'News', 'slug' => 'news', 'icon' => 'rss']
         );
 
+        $this->navigation->addToMain(
+          ['title' => 'Movies', 'slug' => 'movies', 'icon' => 'film']
+        );
+
         // add the blog
         if ($this->blogging) {
             $this->navigation->addToMain(

@@ -175,6 +175,7 @@ return [
         'GrahamCampbell\BootstrapCMS\Providers\AppServiceProvider',
         'GrahamCampbell\BootstrapCMS\Providers\RouteServiceProvider',
         'Matriphe\Imageupload\ImageuploadServiceProvider',
+        'Tmdb\Laravel\TmdbServiceProvider',
 
     ],
 

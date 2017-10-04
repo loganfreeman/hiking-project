@@ -65,3 +65,5 @@ if (Config::get('cms.events')) {
     $router->post('event/signup',  ['as' => 'event_signup', 'uses' => 'EventController@signup']);
     $router->get('event/{id}/isSignupedbyme', ['as' => 'isSignupedbyme', 'uses' => 'EventController@isSignupedbyme']);
 }
+
+$router->resource('movies', 'MoviesController');

@@ -32,7 +32,8 @@
     "mccool/laravel-auto-presenter": "~3.0",
     "guzzlehttp/guzzle": "~5.3|~6.0",
     "matriphe/imageupload": "5.*",
-    "nicolaslopezj/searchable": "1.*"
+    "nicolaslopezj/searchable": "1.*",
+    "php-tmdb/laravel": "^1.1"
   },
   "require-dev": {
     "doctrine/dbal": "~2.5",
