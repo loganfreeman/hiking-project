@@ -27,7 +27,8 @@ class Kernel extends ConsoleKernel
      * @var string[]
      */
     protected $commands = [
-      Commands\Install::class
+      Commands\Install::class,
+      Commands\DB::class,
     ];
 
     /**
