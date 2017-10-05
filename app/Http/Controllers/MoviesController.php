@@ -11,6 +11,7 @@ use GrahamCampbell\BootstrapCMS\Http\Requests;
 use Tmdb\Laravel\Facades\Tmdb;
 use Tmdb\Helper\ImageHelper;
 use Tmdb\Repository\MovieRepository;
+use Illuminate\Support\Facades\Log;
 
 
 class MoviesController extends AbstractController
@@ -27,15 +28,19 @@ class MoviesController extends AbstractController
         parent::__construct();
     }
 
+    public function ajax(Request $request)
+    {
+        return $request->header("Content-Type") == "application/json";
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $movies = $this->movies->getPopular();
-
         return View::make('movies.index', ['movies' => $movies]);
     }
 
