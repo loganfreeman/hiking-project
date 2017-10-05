@@ -15,6 +15,7 @@ use GrahamCampbell\BootstrapCMS\Repositories\PageRepository;
 use GrahamCampbell\Credentials\Credentials;
 use GrahamCampbell\Navigation\Navigation;
 use Illuminate\Events\Dispatcher;
+use Illuminate\Support\Facades\Log;
 
 /**
  * This is the navigation subscriber class.
@@ -175,12 +176,17 @@ class NavigationSubscriber
         // get the pages
         $pages = $this->pagerepository->navigation();
 
-        // delete the home page
-        unset($pages[0]);
+        $pages = collect($pages);
+
+        $pages = $pages->reject(function($value) {
+          return $value['slug'] == 'pages/home';
+        });
 
         // add the pages to the nav bar
         foreach ($pages as $page) {
+          if($page != 'home') {
             $this->navigation->addToMain($page);
+          }
         }
 
         if ($this->credentials->check()) {
@@ -210,8 +216,13 @@ class NavigationSubscriber
         // get the pages
         $pages = $this->pagerepository->navigation();
 
+        $pages = collect($pages);
+
         // select the home page
-        $page = $pages[0];
+        $page = $pages->first(function($key, $value) {
+          return $value['slug'] == 'pages/home';
+        });
+
 
         // add the page to the start of the main nav bars
         $this->navigation->addToMain($page, 'default', true);

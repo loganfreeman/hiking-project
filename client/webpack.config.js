@@ -10,7 +10,7 @@ module.exports = {
     vendor: ['vue', 'axios', 'vuex']
   },
   output: {
-    path: path.resolve('../public/assets'),
+    path: path.resolve('../public/assets/client'),
     filename: 'app.js'
   },
   resolve: {
