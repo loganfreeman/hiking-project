@@ -20,9 +20,9 @@ class TMDBController extends AbstractController {
     $this->tmdb = $tmdb;
   }
 
-  public function search()
+  public function search(Request $request)
   {
-    return $this->tmdb->search(Input::get('q'));
+    return $this->tmdb->search($request->input('q'));
   }
 
   public function suggestions($tmdbID, $mediaType)
