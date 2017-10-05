@@ -66,4 +66,9 @@ if (Config::get('cms.events')) {
     $router->get('event/{id}/isSignupedbyme', ['as' => 'isSignupedbyme', 'uses' => 'EventController@isSignupedbyme']);
 }
 
-$router->resource('movies', 'MoviesController');
+$router->get('movies', ['uses' => 'MoviesController@index']);
+
+$router->get('api/movies/suggestions/{tmdbID}/{mediaType}', ['uses' => 'TMDBController@suggestions']);
+$router->get('api/movies/trending', ['uses' => 'TMDBController@trending']);
+$router->get('api/movies/upcoming', ['uses' => 'TMDBController@upcoming']);
+$router->get('api/movies/search', ['uses' => 'TMDBController@search']);
