@@ -40,7 +40,7 @@ class MoviesController extends AbstractController
      */
     public function index(Request $request)
     {
-        $movies = $this->movies->getPopular();
+        $movies = $this->movies->getNowPlaying();
         return View::make('movies.index', ['movies' => $movies]);
     }
 

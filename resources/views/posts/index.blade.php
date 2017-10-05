@@ -12,6 +12,19 @@
   @endif
 @stop
 
+@section('custom-css')
+<style>
+.grid-item { width: 260px; }
+.card {
+  width: 260px;
+  display:inline-block;
+  margin-bottom:20px;
+  padding-bottom:10px;
+  vertical-align:top
+}
+</style>
+@stop
+
 @section('top')
 <div class="top">
 
@@ -32,56 +45,51 @@
     </div>
 </div>
 
-<div id="columns">
+<div class="grid">
 @foreach($posts as $post)
-
-    <figure>
+<div class="grid-item">
+    <div class="card">
       @if($post->hasImage())
-        <div class="post-image">
-          <img src="{{ URL::to($post->imagePath()) }}" />
-        </div>
+        <img src="{{ URL::to($post->imagePath()) }}" />
       @endif
 
-      <figcaption>
-      <h2>{!! $post->title !!}</h2>
-      <p>
-          <strong>{!! $post->summary !!}</strong>
-      </p>
-      <p>
-        @foreach ($post->categories as $category)
-            <span class="badge">{!! $category['name'] !!}</span>
-        @endforeach
-      </p>
 
-      <ul class="list-group">
-        <a class="btn btn-success btn-secondary" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-toggle="tooltip" title="Show Post"><i class="fa fa-file-text" > Show Post</i></a>
-        @auth('blog')
-          <a class="btn btn-info btn-secondary" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}" data-toggle="tooltip" title="Edit Post"><i class="fa fa-pencil-square-o" > Edit Post</i></a>
-          <strong data-toggle="tooltip" title="Delete Post!"><a class="btn btn-danger btn-secondary" href="#delete_post_{!! $post->id !!}" data-toggle="modal" data-target="#delete_post_{!! $post->id !!}" ><i class="fa fa-times" > Delete Post</i></a></strong>
-        @endauth
-      </ul>
+      <div class="card-block">
+        <h2 class="card-title">{!! $post->title !!}</h2>
+        <p class="card-text">
+            <strong>{!! $post->summary !!}</strong>
+        </p>
+        <p class="card-text">
+          @foreach ($post->categories as $category)
+              <span class="badge">{!! $category['name'] !!}</span>
+          @endforeach
+        </p>
 
-      <div class="actions action-bar">
-        @auth('user')
-        <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
-        @endauth
-        <span><strong class="likesCount">{!! $post->likesCount() !!} likes</strong></span>
-        @auth('user')
-        <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
-        <i class="fa fa-heart fa-1 {!! $post->isFavoritedByMe($user) ? "" : "hidden" !!}" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
-        @endauth
-        <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+        <ul class="list-group">
+          <a class="btn btn-success btn-secondary" href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-toggle="tooltip" title="Show Post"><i class="fa fa-file-text" > Show Post</i></a>
+          @auth('blog')
+            <a class="btn btn-info btn-secondary" href="{!! URL::route('blog.posts.edit', array('posts' => $post->id)) !!}" data-toggle="tooltip" title="Edit Post"><i class="fa fa-pencil-square-o" > Edit Post</i></a>
+            <strong data-toggle="tooltip" title="Delete Post!"><a class="btn btn-danger btn-secondary" href="#delete_post_{!! $post->id !!}" data-toggle="modal" data-target="#delete_post_{!! $post->id !!}" ><i class="fa fa-times" > Delete Post</i></a></strong>
+          @endauth
+        </ul>
 
+        <div class="actions action-bar">
+          @auth('user')
+          <a class="icons-sm"><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
+          @endauth
+          <span><strong class="likesCount">{!! $post->likesCount() !!} likes</strong></span>
+          @auth('user')
+          <a class="icons-sm"><i class="fa fa-bookmark fa-1" aria-hidden="true" data-id="{{ $post->id }}"></i></a>
+          <i class="fa fa-heart fa-1 {!! $post->isFavoritedByMe($user) ? "" : "hidden" !!}" aria-hidden="true" data-toggle="tooltip" title="favored by me"></i>
+          @endauth
+          <div class="fb-share-button" data-href="{!! URL::route('blog.posts.show', array('posts' => $post->id)) !!}" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+
+        </div>
       </div>
-    </figcaption>
-  	</figure>
 
 
-
-
-
-
-
+  </div>
+</div>
 @endforeach
 </div>
 
@@ -137,6 +145,7 @@
 
 @section('js')
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 <script>
 function increaseLikeCount(element) {
   var x = element.text();
@@ -158,6 +167,11 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 $(document).ready(function() {
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 260,
+    gutter: 10
+  });
   $('.dropdown-toggle').dropdown();
   $(".dropdown-menu li a").click(function(){
     var category = $(this).attr('category');
