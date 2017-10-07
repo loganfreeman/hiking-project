@@ -20,9 +20,9 @@
                     @endforeach
                 </ul>
             </div>
-            @if ($bar)
-                <div id="bar-nav">
-                    <ul class="nav navbar-nav navbar-right">
+            <div id="bar-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    @if ($bar)
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 {!! $side !!} <b class="caret"></b>
@@ -35,11 +35,30 @@
                                         </a>
                                     </li>
                                 @endforeach
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{!! URL::route('account.logout') !!}">
+                                        <i class="fa fa-power-off fa-fw"></i> Logout
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                    </ul>
-                </div>
-            @endif
+                    @else
+                        <li {!! (Request::is('account/login') ? 'class="active"' : '') !!}>
+                            <a href="{!! URL::route('account.login') !!}">
+                                Login
+                            </a>
+                        </li>
+                        @if (Config::get('credentials.regallowed'))
+                            <li {!! (Request::is('account/register') ? 'class="active"' : '') !!}>
+                                <a href="{!! URL::route('account.register') !!}">
+                                    Register
+                                </a>
+                            </li>
+                        @endif
+                    @endif
+                </ul>
+            </div>
         </div>
     </div>
 </div>
