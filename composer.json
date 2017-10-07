@@ -25,7 +25,6 @@
     "graham-campbell/credentials": "~1.0",
     "graham-campbell/exceptions": "~4.0",
     "graham-campbell/logviewer": "~1.0",
-    "graham-campbell/navigation": "~2.0",
     "graham-campbell/throttle": "~4.0",
     "graham-campbell/security": "^3.5",
     "mccool/laravel-auto-presenter": "~3.0",
@@ -53,7 +52,8 @@
       "GrahamCampbell\\Core\\": "graham-campbell/core/src",
       "GrahamCampbell\\HTMLMin\\": "graham-campbell/htmlmin/src",
       "GrahamCampbell\\Binput\\": "graham-campbell/binput/src",
-      "GrahamCampbell\\Markdown\\": "graham-campbell/markdown/src"
+      "GrahamCampbell\\Markdown\\": "graham-campbell/markdown/src",
+      "GrahamCampbell\\Navigation\\": "graham-campbell/navigation/src"
     }
   },
   "autoload-dev": {
