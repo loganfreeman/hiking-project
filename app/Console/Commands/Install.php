@@ -1,12 +1,12 @@
 <?php
 
-namespace GrahamCampbell\BootstrapCMS\Console\Commands;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Events\Dispatcher;
 
-use GrahamCampbell\BootstrapCMS\Seeds\CategoriesTableSeeder;
+use App\Seeds\CategoriesTableSeeder;
 
 class Install extends Command implements SelfHandling
 {

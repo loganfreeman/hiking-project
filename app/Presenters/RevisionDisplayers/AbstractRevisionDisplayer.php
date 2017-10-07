@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers;
+namespace App\Presenters\RevisionDisplayers;
 
 use GrahamCampbell\Credentials\Presenters\RevisionDisplayers\AbstractRevisionDisplayer as BaseRevisionDisplayer;
 use GrahamCampbell\Credentials\Presenters\RevisionDisplayers\RevisionDisplayerInterface;

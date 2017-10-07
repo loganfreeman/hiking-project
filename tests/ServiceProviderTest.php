@@ -25,26 +25,26 @@ class ServiceProviderTest extends AbstractTestCase
 
     public function testNavigationFactoryIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\BootstrapCMS\Navigation\Factory');
+        $this->assertIsInjectable('App\Navigation\Factory');
     }
 
     public function testCommentRepositoryIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\BootstrapCMS\Repositories\CommentRepository');
+        $this->assertIsInjectable('App\Repositories\CommentRepository');
     }
 
     public function testEventRepositoryIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\BootstrapCMS\Repositories\EventRepository');
+        $this->assertIsInjectable('App\Repositories\EventRepository');
     }
 
     public function testPageRepositoryIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\BootstrapCMS\Repositories\PageRepository');
+        $this->assertIsInjectable('App\Repositories\PageRepository');
     }
 
     public function testPostRepositoryIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\BootstrapCMS\Repositories\PostRepository');
+        $this->assertIsInjectable('App\Repositories\PostRepository');
     }
 }

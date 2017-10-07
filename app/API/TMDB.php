@@ -1,9 +1,9 @@
 <?php
-namespace GrahamCampbell\BootstrapCMS\API;
+namespace App\API;
 
 use DateTime;
 use GuzzleHttp\Client;
-use GrahamCampbell\BootstrapCMS\Models\Item;
+use App\Models\Item;
 
 class TMDB {
 

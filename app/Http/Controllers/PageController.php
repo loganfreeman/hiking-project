@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Exception;
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\BootstrapCMS\Facades\PageRepository;
+use App\Facades\PageRepository;
 use GrahamCampbell\Credentials\Facades\Credentials;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;

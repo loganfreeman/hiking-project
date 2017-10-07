@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models;
+namespace App\Models;
 
-use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToPostTrait;
+use App\Models\Relations\BelongsToPostTrait;
 use GrahamCampbell\Credentials\Models\AbstractModel;
 use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
@@ -94,6 +94,6 @@ class Comment extends AbstractModel implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Presenters\CommentPresenter';
+        return 'App\Presenters\CommentPresenter';
     }
 }

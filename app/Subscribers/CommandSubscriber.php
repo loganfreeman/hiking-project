@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Subscribers;
+namespace App\Subscribers;
 
-use GrahamCampbell\BootstrapCMS\Repositories\PageRepository;
+use App\Repositories\PageRepository;
 use Illuminate\Console\Command;
 use Illuminate\Events\Dispatcher;
 
@@ -25,14 +25,14 @@ class CommandSubscriber
     /**
      * The page repository instance.
      *
-     * @var \GrahamCampbell\BootstrapCMS\Repositories\PageRepository
+     * @var \App\Repositories\PageRepository
      */
     protected $pagerepository;
 
     /**
      * Create a new instance.
      *
-     * @param \GrahamCampbell\BootstrapCMS\Repositories\PageRepository $pagerepository
+     * @param \App\Repositories\PageRepository $pagerepository
      *
      * @return void
      */
@@ -52,7 +52,7 @@ class CommandSubscriber
     {
         $events->listen(
             'command.updatecache',
-            'GrahamCampbell\BootstrapCMS\Subscribers\CommandSubscriber@onUpdateCache',
+            'App\Subscribers\CommandSubscriber@onUpdateCache',
             3
         );
     }
@@ -74,7 +74,7 @@ class CommandSubscriber
     /**
      * Get the page repository instance.
      *
-     * @return \GrahamCampbell\BootstrapCMS\Repositories\PageRepository
+     * @return \App\Repositories\PageRepository
      */
     public function getPageRepository()
     {

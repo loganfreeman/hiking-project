@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters;
+namespace App\Presenters;
 
 /**
  * This is the owner presenter trait.

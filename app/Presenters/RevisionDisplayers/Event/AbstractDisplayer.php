@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers\Event;
+namespace App\Presenters\RevisionDisplayers\Event;
 
-use GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers\AbstractRevisionDisplayer;
+use App\Presenters\RevisionDisplayers\AbstractRevisionDisplayer;
 
 /**
  * This is the abstract displayer class.

@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'model' => 'GrahamCampbell\BootstrapCMS\Models\User',
+    'model' => 'App\Models\User',
 
     /*
     |--------------------------------------------------------------------------

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http;
+namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -27,7 +27,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         'Fideloper\Proxy\TrustProxies',
-        'GrahamCampbell\BootstrapCMS\Http\Middleware\CheckForMaintenanceMode',
+        'App\Http\Middleware\CheckForMaintenanceMode',
         'Illuminate\Cookie\Middleware\EncryptCookies',
         'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
         'Illuminate\Session\Middleware\StartSession',

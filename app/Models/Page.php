@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models;
+namespace App\Models;
 
 use GrahamCampbell\Credentials\Models\AbstractModel;
 use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
@@ -104,7 +104,7 @@ class Page extends AbstractModel implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Presenters\PagePresenter';
+        return 'App\Presenters\PagePresenter';
     }
 
     /**

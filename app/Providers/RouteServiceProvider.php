@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Providers;
+namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
@@ -28,7 +28,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'GrahamCampbell\BootstrapCMS\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers';
 
     /**
      * Define the route model bindings, pattern filters, etc.

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 
 /**
  * This is the belongs to post trait.
@@ -25,7 +25,7 @@ trait PostBelongsToManyCategoriesTrait
      */
      public function categories()
      {
-         return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\Category', 'post_categories');
+         return $this->belongsToMany('App\Models\Category', 'post_categories');
      }
 
      public function categoryNames() {

@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Repositories;
+namespace App\Repositories;
 
 use GrahamCampbell\Credentials\Repositories\AbstractRepository;
 use GrahamCampbell\Credentials\Repositories\PaginateRepositoryTrait;
-use GrahamCampbell\BootstrapCMS\Models\Category;
-use GrahamCampbell\BootstrapCMS\Models\User;
-use GrahamCampbell\BootstrapCMS\Models\Post;
-use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
+use App\Models\Category;
+use App\Models\User;
+use App\Models\Post;
+use App\Facades\CategoryRepository;
 
 /**
  * This is the post repository class.

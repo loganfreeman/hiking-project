@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
-use GrahamCampbell\BootstrapCMS\Http\Middleware\Auth\Blog;
-use GrahamCampbell\BootstrapCMS\Http\Middleware\Auth\Edit;
+use App\Http\Middleware\Auth\Blog;
+use App\Http\Middleware\Auth\Edit;
 use GrahamCampbell\Credentials\Http\Controllers\AbstractController as Controller;
 
 /**

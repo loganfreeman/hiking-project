@@ -41,7 +41,7 @@ class PageRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Facades\PageRepository';
+        return 'App\Facades\PageRepository';
     }
 
     /**
@@ -51,6 +51,6 @@ class PageRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\BootstrapCMS\Repositories\PageRepository';
+        return 'App\Repositories\PageRepository';
     }
 }

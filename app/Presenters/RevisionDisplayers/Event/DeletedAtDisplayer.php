@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers\Event;
+namespace App\Presenters\RevisionDisplayers\Event;
 
 /**
  * This is the deleted at displayer class.

@@ -21,10 +21,8 @@
     "fideloper/proxy": "~3.0",
     "graham-campbell/binput": "~3.0",
     "graham-campbell/contact": "~1.0",
-    "graham-campbell/core": "~4.0",
     "graham-campbell/credentials": "~1.0",
     "graham-campbell/exceptions": "~4.0",
-    "graham-campbell/htmlmin": "~4.0",
     "graham-campbell/logviewer": "~1.0",
     "graham-campbell/markdown": "~4.0",
     "graham-campbell/navigation": "~2.0",
@@ -50,7 +48,9 @@
       "database"
     ],
     "psr-4": {
-      "GrahamCampbell\\BootstrapCMS\\": "app/"
+      "App\\": "app/",
+      "GrahamCampbell\\Core\\": "graham-campbell/core/src",
+      "GrahamCampbell\\HTMLMin\\": "graham-campbell/htmlmin/src"
     }
   },
   "autoload-dev": {

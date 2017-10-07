@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http\Middleware\Auth;
+namespace App\Http\Middleware\Auth;
 
 use GrahamCampbell\Credentials\Http\Middleware\Auth\AbstractAuth;
 

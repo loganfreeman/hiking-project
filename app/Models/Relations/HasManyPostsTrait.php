@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 
 /**
  * This is the has many posts trait.
@@ -25,7 +25,7 @@ trait HasManyPostsTrait
      */
     public function posts()
     {
-        return $this->hasMany('GrahamCampbell\BootstrapCMS\Models\Post');
+        return $this->hasMany('App\Models\Post');
     }
 
     /**

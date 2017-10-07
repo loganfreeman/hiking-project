@@ -1,5 +1,5 @@
 <?php
-namespace GrahamCampbell\BootstrapCMS\API;
+namespace App\API;
 
 
 /**

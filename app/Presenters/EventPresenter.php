@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters;
+namespace App\Presenters;
 
 use McCool\LaravelAutoPresenter\BasePresenter;
 

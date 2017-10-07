@@ -41,7 +41,7 @@ class PostRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Facades\PostRepository';
+        return 'App\Facades\PostRepository';
     }
 
     /**
@@ -51,6 +51,6 @@ class PostRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\BootstrapCMS\Repositories\PostRepository';
+        return 'App\Repositories\PostRepository';
     }
 }

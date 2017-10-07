@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 
 /**
  * This is the has many pages trait.
@@ -25,7 +25,7 @@ trait HasManyPagesTrait
      */
     public function pages()
     {
-        return $this->hasMany('GrahamCampbell\BootstrapCMS\Models\Page');
+        return $this->hasMany('App\Models\Page');
     }
 
     /**

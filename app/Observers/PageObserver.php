@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Observers;
+namespace App\Observers;
 
-use GrahamCampbell\BootstrapCMS\Facades\PageRepository;
+use App\Facades\PageRepository;
 
 /**
  * This is the page observer class.

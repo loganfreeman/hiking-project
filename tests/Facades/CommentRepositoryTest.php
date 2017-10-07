@@ -41,7 +41,7 @@ class CommentRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Facades\CommentRepository';
+        return 'App\Facades\CommentRepository';
     }
 
     /**
@@ -51,6 +51,6 @@ class CommentRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\BootstrapCMS\Repositories\CommentRepository';
+        return 'App\Repositories\CommentRepository';
     }
 }

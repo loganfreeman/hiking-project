@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models;
+namespace App\Models;
 
-use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyCommentsTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\UserHasManyEventsTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToManyPostsTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\UserHasManyFavoritePosts;
-use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyEventsTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyPagesTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyPostsTrait;
+use App\Models\Relations\HasManyCommentsTrait;
+use App\Models\Relations\UserHasManyEventsTrait;
+use App\Models\Relations\BelongsToManyPostsTrait;
+use App\Models\Relations\UserHasManyFavoritePosts;
+use App\Models\Relations\HasManyEventsTrait;
+use App\Models\Relations\HasManyPagesTrait;
+use App\Models\Relations\HasManyPostsTrait;
 use GrahamCampbell\Credentials\Models\User as CredentialsUser;
 
 /**
@@ -36,7 +36,7 @@ class User extends CredentialsUser
      */
     public function getPresenterClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Presenters\UserPresenter';
+        return 'App\Presenters\UserPresenter';
     }
 
     /**

@@ -28,13 +28,13 @@ class DatabaseSeeder extends Seeder
     {
         Eloquent::unguard();
 
-        $this->call('GrahamCampbell\BootstrapCMS\Seeds\GroupsTableSeeder');
-        $this->call('GrahamCampbell\BootstrapCMS\Seeds\UsersTableSeeder');
-        $this->call('GrahamCampbell\BootstrapCMS\Seeds\UsersGroupsTableSeeder');
+        $this->call('App\Seeds\GroupsTableSeeder');
+        $this->call('App\Seeds\UsersTableSeeder');
+        $this->call('App\Seeds\UsersGroupsTableSeeder');
 
-        $this->call('GrahamCampbell\BootstrapCMS\Seeds\PagesTableSeeder');
-        $this->call('GrahamCampbell\BootstrapCMS\Seeds\PostsTableSeeder');
-        $this->call('GrahamCampbell\BootstrapCMS\Seeds\CommentsTableSeeder');
-        $this->call('GrahamCampbell\BootstrapCMS\Seeds\EventsTableSeeder');
+        $this->call('App\Seeds\PagesTableSeeder');
+        $this->call('App\Seeds\PostsTableSeeder');
+        $this->call('App\Seeds\CommentsTableSeeder');
+        $this->call('App\Seeds\EventsTableSeeder');
     }
 }

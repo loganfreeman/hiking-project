@@ -41,7 +41,7 @@ class EventRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Facades\EventRepository';
+        return 'App\Facades\EventRepository';
     }
 
     /**
@@ -51,6 +51,6 @@ class EventRepositoryTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\BootstrapCMS\Repositories\EventRepository';
+        return 'App\Repositories\EventRepository';
     }
 }

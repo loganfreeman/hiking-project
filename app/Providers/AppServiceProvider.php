@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Providers;
+namespace App\Providers;
 
-use GrahamCampbell\BootstrapCMS\Http\Controllers\CommentController;
-use GrahamCampbell\BootstrapCMS\Navigation\Factory;
-use GrahamCampbell\BootstrapCMS\Observers\PageObserver;
-use GrahamCampbell\BootstrapCMS\Repositories\CommentRepository;
-use GrahamCampbell\BootstrapCMS\Repositories\CategoryRepository;
-use GrahamCampbell\BootstrapCMS\Repositories\EventRepository;
-use GrahamCampbell\BootstrapCMS\Repositories\PageRepository;
-use GrahamCampbell\BootstrapCMS\Repositories\PostRepository;
-use GrahamCampbell\BootstrapCMS\Subscribers\CommandSubscriber;
-use GrahamCampbell\BootstrapCMS\Subscribers\NavigationSubscriber;
-use GrahamCampbell\BootstrapCMS\Models\Category;
+use App\Http\Controllers\CommentController;
+use App\Navigation\Factory;
+use App\Observers\PageObserver;
+use App\Repositories\CommentRepository;
+use App\Repositories\CategoryRepository;
+use App\Repositories\EventRepository;
+use App\Repositories\PageRepository;
+use App\Repositories\PostRepository;
+use App\Subscribers\CommandSubscriber;
+use App\Subscribers\NavigationSubscriber;
+use App\Models\Category;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -59,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $blade->directive('navigation', function () {
-            return '<?php echo \GrahamCampbell\BootstrapCMS\Facades\NavigationFactory::make($__navtype); ?>';
+            return '<?php echo \App\Facades\NavigationFactory::make($__navtype); ?>';
         });
     }
 
@@ -115,7 +115,7 @@ class AppServiceProvider extends ServiceProvider
             return new Factory($credentials, $navigation, $name, $property, $inverse);
         });
 
-        $this->app->alias('navfactory', 'GrahamCampbell\BootstrapCMS\Navigation\Factory');
+        $this->app->alias('navfactory', 'App\Navigation\Factory');
     }
 
     /**
@@ -134,7 +134,7 @@ class AppServiceProvider extends ServiceProvider
             return new CommentRepository($comment, $validator);
         });
 
-        $this->app->alias('commentrepository', 'GrahamCampbell\BootstrapCMS\Repositories\CommentRepository');
+        $this->app->alias('commentrepository', 'App\Repositories\CommentRepository');
     }
 
     /**
@@ -152,7 +152,7 @@ class AppServiceProvider extends ServiceProvider
             return new CategoryRepository($category, $validator);
         });
 
-        $this->app->alias('categoryrepository', 'GrahamCampbell\BootstrapCMS\Repositories\CategoryRepository');
+        $this->app->alias('categoryrepository', 'App\Repositories\CategoryRepository');
     }
 
     /**
@@ -171,7 +171,7 @@ class AppServiceProvider extends ServiceProvider
             return new EventRepository($event, $validator);
         });
 
-        $this->app->alias('eventrepository', 'GrahamCampbell\BootstrapCMS\Repositories\EventRepository');
+        $this->app->alias('eventrepository', 'App\Repositories\EventRepository');
     }
 
     /**
@@ -190,7 +190,7 @@ class AppServiceProvider extends ServiceProvider
             return new PageRepository($page, $validator);
         });
 
-        $this->app->alias('pagerepository', 'GrahamCampbell\BootstrapCMS\Repositories\PageRepository');
+        $this->app->alias('pagerepository', 'App\Repositories\PageRepository');
     }
 
     /**
@@ -209,7 +209,7 @@ class AppServiceProvider extends ServiceProvider
             return new PostRepository($post, $validator);
         });
 
-        $this->app->alias('postrepository', 'GrahamCampbell\BootstrapCMS\Repositories\PostRepository');
+        $this->app->alias('postrepository', 'App\Repositories\PostRepository');
     }
 
     /**
@@ -219,7 +219,7 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function registerCommandSubscriber()
     {
-        $this->app->singleton('GrahamCampbell\BootstrapCMS\Subscribers\CommandSubscriber', function ($app) {
+        $this->app->singleton('App\Subscribers\CommandSubscriber', function ($app) {
             $pagerepository = $app['pagerepository'];
 
             return new CommandSubscriber($pagerepository);
@@ -233,7 +233,7 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function registerNavigationSubscriber()
     {
-        $this->app->singleton('GrahamCampbell\BootstrapCMS\Subscribers\NavigationSubscriber', function ($app) {
+        $this->app->singleton('App\Subscribers\NavigationSubscriber', function ($app) {
             $navigation = $app['navigation'];
             $credentials = $app['credentials'];
             $pagerepository = $app['pagerepository'];
@@ -259,7 +259,7 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function registerCommentController()
     {
-        $this->app->bind('GrahamCampbell\BootstrapCMS\Http\Controllers\CommentController', function ($app) {
+        $this->app->bind('App\Http\Controllers\CommentController', function ($app) {
             $throttler = $app['throttle']->get($app['request'], 1, 10);
 
             return new CommentController($throttler);

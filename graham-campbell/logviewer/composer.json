@@ -1,0 +1,48 @@
+{
+    "name": "graham-campbell/logviewer",
+    "description": "LogViewer Provides A LogViewer Admin Module For Laravel 5",
+    "keywords": ["laravel", "framework", "log viewer", "LogViewer", "logviewer", "LogViewer", "Laravel LogViewer", "Laravel-LogViewer", "Graham Campbell", "GrahamCampbell"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "graham@alt-three.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/filesystem": "5.1.*",
+        "illuminate/pagination": "5.1.*",
+        "illuminate/routing": "5.1.*",
+        "illuminate/session": "5.1.*",
+        "illuminate/support": "5.1.*",
+        "illuminate/view": "5.1.*"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "~3.0",
+        "phpunit/phpunit": "^4.7.6"
+    },
+    "suggest": {
+        "graham-campbell/navigation": "Easily add a navigation bar."
+    },
+    "autoload": {
+        "psr-4": {
+            "GrahamCampbell\\LogViewer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GrahamCampbell\\Tests\\LogViewer\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

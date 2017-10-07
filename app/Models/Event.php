@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models;
+namespace App\Models;
 
 use GrahamCampbell\Credentials\Models\AbstractModel;
 use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use GrahamCampbell\BootstrapCMS\Models\EventSignups;
+use App\Models\EventSignups;
 
 
 /**
@@ -104,12 +104,12 @@ class Event extends AbstractModel implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Presenters\EventPresenter';
+        return 'App\Presenters\EventPresenter';
     }
 
     public function signups()
     {
-        return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\User', 'event_signups');
+        return $this->belongsToMany('App\Models\User', 'event_signups');
     }
 
     public function signupsCount()

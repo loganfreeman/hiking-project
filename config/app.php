@@ -180,8 +180,8 @@ return [
         'GrahamCampbell\Navigation\NavigationServiceProvider',
         'GrahamCampbell\Contact\ContactServiceProvider',
         'GrahamCampbell\LogViewer\LogViewerServiceProvider',
-        'GrahamCampbell\BootstrapCMS\Providers\AppServiceProvider',
-        'GrahamCampbell\BootstrapCMS\Providers\RouteServiceProvider',
+        'App\Providers\AppServiceProvider',
+        'App\Providers\RouteServiceProvider',
         'Matriphe\Imageupload\ImageuploadServiceProvider',
         'Tmdb\Laravel\TmdbServiceProvider',
 

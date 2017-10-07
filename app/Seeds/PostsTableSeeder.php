@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Seeds;
+namespace App\Seeds;
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use GrahamCampbell\BootstrapCMS\Models\Post;
-use GrahamCampbell\BootstrapCMS\Models\PostCategory;
-use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
+use App\Models\Post;
+use App\Models\PostCategory;
+use App\Facades\CategoryRepository;
 
 
 /**

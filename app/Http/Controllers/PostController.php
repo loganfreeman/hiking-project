@@ -9,27 +9,27 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\BootstrapCMS\Facades\PostRepository;
+use App\Facades\PostRepository;
 use GrahamCampbell\Credentials\Facades\Credentials;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Http\Request;
-use GrahamCampbell\BootstrapCMS\Models\Like;
-use GrahamCampbell\BootstrapCMS\Models\Favorite;
-use GrahamCampbell\BootstrapCMS\Models\User;
-use GrahamCampbell\BootstrapCMS\Models\PostCategory;
+use App\Models\Like;
+use App\Models\Favorite;
+use App\Models\User;
+use App\Models\PostCategory;
 use Illuminate\Support\Facades\Response;
 use Exception;
 use Illuminate\Support\Facades\Input;
-use GrahamCampbell\BootstrapCMS\Facades\CategoryRepository;
+use App\Facades\CategoryRepository;
 use Illuminate\Support\Facades\Log;
-use GrahamCampbell\BootstrapCMS\Models\Post;
+use App\Models\Post;
 use Imageupload;
-use GrahamCampbell\BootstrapCMS\API\GoogleCustomSearch;
+use App\API\GoogleCustomSearch;
 
 /**
  * This is the post controller class.

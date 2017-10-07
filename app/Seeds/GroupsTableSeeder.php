@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Seeds;
+namespace App\Seeds;
 
 use GrahamCampbell\Credentials\Facades\Credentials;
 use Illuminate\Database\Seeder;

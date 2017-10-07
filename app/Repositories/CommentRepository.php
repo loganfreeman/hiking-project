@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Repositories;
+namespace App\Repositories;
 
 use GrahamCampbell\Credentials\Repositories\AbstractRepository;
 

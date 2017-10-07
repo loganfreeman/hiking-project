@@ -1,9 +1,9 @@
 <?php
 
-namespace GrahamCampbell\BootstrapCMS\Models;
+namespace App\Models;
 
 use GrahamCampbell\Credentials\Models\AbstractModel;
-use GrahamCampbell\BootstrapCMS\Models\Relations\CategoryBelongsToManyPostsTrait;
+use App\Models\Relations\CategoryBelongsToManyPostsTrait;
 
 class Category extends AbstractModel
 {

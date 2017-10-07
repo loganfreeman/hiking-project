@@ -1,6 +1,6 @@
 <?php
 
-namespace GrahamCampbell\BootstrapCMS\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,12 +25,12 @@ class Item extends Model {
 
   public function episodes()
   {
-    return $this->hasMany('GrahamCampbell\BootstrapCMS\Models\Episode', 'tmdb_id', 'tmdb_id');
+    return $this->hasMany('App\Models\Episode', 'tmdb_id', 'tmdb_id');
   }
 
   public function latestEpisode()
   {
-    return $this->hasOne('GrahamCampbell\BootstrapCMS\Models\Episode', 'tmdb_id', 'tmdb_id')
+    return $this->hasOne('App\Models\Episode', 'tmdb_id', 'tmdb_id')
       ->orderBy('id', 'desc')
       ->where('seen', true)
       ->latest();

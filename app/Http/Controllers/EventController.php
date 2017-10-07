@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\BootstrapCMS\Facades\EventRepository;
+use App\Facades\EventRepository;
 use GrahamCampbell\Credentials\Facades\Credentials;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Support\Facades\Input;
-use GrahamCampbell\BootstrapCMS\Models\EventSignups;
+use App\Models\EventSignups;
 use Illuminate\Support\Facades\Response;
 use Exception;
 

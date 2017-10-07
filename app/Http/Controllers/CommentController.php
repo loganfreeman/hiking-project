@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\BootstrapCMS\Facades\CommentRepository;
-use GrahamCampbell\BootstrapCMS\Facades\PostRepository;
+use App\Facades\CommentRepository;
+use App\Facades\PostRepository;
 use GrahamCampbell\Credentials\Facades\Credentials;
 use GrahamCampbell\Throttle\Throttlers\ThrottlerInterface;
 use Illuminate\Support\Facades\Response;

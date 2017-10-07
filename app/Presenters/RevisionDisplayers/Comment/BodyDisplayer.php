@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers\Comment;
+namespace App\Presenters\RevisionDisplayers\Comment;
 
 /**
  * This is the body displayer class.

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Navigation;
+namespace App\Navigation;
 
 use GrahamCampbell\Credentials\Credentials;
 use GrahamCampbell\Navigation\Navigation;

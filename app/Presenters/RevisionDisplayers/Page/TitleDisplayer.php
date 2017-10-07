@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers\Page;
+namespace App\Presenters\RevisionDisplayers\Page;
 
 /**
  * This is the title displayer class.

@@ -1,15 +1,15 @@
 <?php
 
-namespace GrahamCampbell\BootstrapCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use GrahamCampbell\BootstrapCMS\Http\Requests;
+use App\Http\Requests;
 
 use Illuminate\Support\Facades\Log;
 
-use GrahamCampbell\BootstrapCMS\API\TMDB;
+use App\API\TMDB;
 
 class TMDBController extends AbstractController {
 

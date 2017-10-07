@@ -1,12 +1,12 @@
 <?php
 
-namespace GrahamCampbell\BootstrapCMS\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
-use GrahamCampbell\BootstrapCMS\Http\Requests;
+use App\Http\Requests;
 
 use Tmdb\Laravel\Facades\Tmdb;
 use Tmdb\Helper\ImageHelper;

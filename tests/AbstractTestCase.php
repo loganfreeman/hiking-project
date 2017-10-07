@@ -11,7 +11,7 @@
 
 namespace GrahamCampbell\Tests\BootstrapCMS;
 
-use GrahamCampbell\BootstrapCMS\Providers\AppServiceProvider;
+use App\Providers\AppServiceProvider;
 use GrahamCampbell\TestBenchCore\MockeryTrait;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\TestCase;

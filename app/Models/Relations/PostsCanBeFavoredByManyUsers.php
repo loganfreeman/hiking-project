@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 use GrahamCampbell\Credentials\Facades\Credentials;
-use GrahamCampbell\BootstrapCMS\Models\Favorite;
+use App\Models\Favorite;
 use Illuminate\Support\Facades\Log;
 
 
@@ -30,7 +30,7 @@ trait PostsCanBeFavoredByManyUsers
      */
      public function favorites()
      {
-         return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\User', 'favorites');
+         return $this->belongsToMany('App\Models\User', 'favorites');
      }
 
      public function favoritesCount()

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 
 /**
  * This is the belongs to post trait.
@@ -25,6 +25,6 @@ trait BelongsToPostTrait
      */
     public function post()
     {
-        return $this->belongsTo('GrahamCampbell\BootstrapCMS\Models\Post');
+        return $this->belongsTo('App\Models\Post');
     }
 }

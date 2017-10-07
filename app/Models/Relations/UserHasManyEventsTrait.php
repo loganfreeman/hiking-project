@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 
 /**
  * This is the belongs to post trait.
@@ -25,6 +25,6 @@ trait UserHasManyEventsTrait
      */
      public function signups()
      {
-         return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\Event', 'event_signups', 'user_id', 'event_id');
+         return $this->belongsToMany('App\Models\Event', 'event_signups', 'user_id', 'event_id');
      }
 }

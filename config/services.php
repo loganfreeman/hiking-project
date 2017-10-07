@@ -39,7 +39,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => 'GrahamCampbell\BootstrapCMS\Models\User',
+        'model'  => 'App\Models\User',
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

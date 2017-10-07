@@ -41,7 +41,7 @@ class NavigationFactoryTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Facades\NavigationFactory';
+        return 'App\Facades\NavigationFactory';
     }
 
     /**
@@ -51,6 +51,6 @@ class NavigationFactoryTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\BootstrapCMS\Navigation\Factory';
+        return 'App\Navigation\Factory';
     }
 }

@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models;
+namespace App\Models;
 
-use GrahamCampbell\BootstrapCMS\Models\Relations\HasManyCommentsTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\BelongsToManyUsersTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\PostBelongsToManyCategoriesTrait;
-use GrahamCampbell\BootstrapCMS\Models\Relations\PostsCanBeFavoredByManyUsers;
+use App\Models\Relations\HasManyCommentsTrait;
+use App\Models\Relations\BelongsToManyUsersTrait;
+use App\Models\Relations\PostBelongsToManyCategoriesTrait;
+use App\Models\Relations\PostsCanBeFavoredByManyUsers;
 use GrahamCampbell\Credentials\Models\AbstractModel;
 use GrahamCampbell\Credentials\Models\Relations\BelongsToUserTrait;
 use GrahamCampbell\Credentials\Models\Relations\RevisionableTrait;
@@ -140,7 +140,7 @@ class Post extends AbstractModel implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return 'GrahamCampbell\BootstrapCMS\Presenters\PostPresenter';
+        return 'App\Presenters\PostPresenter';
     }
 
     /**

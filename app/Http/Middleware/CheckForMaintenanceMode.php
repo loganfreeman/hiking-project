@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Foundation\Application;

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 
 /**
  * This is the belongs to post trait.
@@ -25,7 +25,7 @@ trait BelongsToManyUsersTrait
      */
      public function likes()
      {
-         return $this->belongsToMany('GrahamCampbell\BootstrapCMS\Models\User', 'likes');
+         return $this->belongsToMany('App\Models\User', 'likes');
      }
 
      public function likesCount()

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Models\Relations;
+namespace App\Models\Relations;
 
 /**
  * This is the has many events trait.
@@ -25,7 +25,7 @@ trait HasManyEventsTrait
      */
     public function events()
     {
-        return $this->hasMany('GrahamCampbell\BootstrapCMS\Models\Event');
+        return $this->hasMany('App\Models\Event');
     }
 
     /**

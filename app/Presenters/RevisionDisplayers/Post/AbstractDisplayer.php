@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers\Post;
+namespace App\Presenters\RevisionDisplayers\Post;
 
-use GrahamCampbell\BootstrapCMS\Presenters\RevisionDisplayers\AbstractRevisionDisplayer;
+use App\Presenters\RevisionDisplayers\AbstractRevisionDisplayer;
 
 /**
  * This is the abstract displayer class.
