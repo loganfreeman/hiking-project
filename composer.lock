@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20ff0ea2981b462b6d2138df08e334d0",
-    "content-hash": "57576ee1473024140dee0d5d1eff8b4d",
+    "hash": "97ba6baf5fc3f96d6e8a43d75af730af",
+    "content-hash": "0bb31f723ebd2012b82112c39e6ec95f",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -556,70 +556,6 @@
                 "security"
             ],
             "time": "2017-01-01 13:34:01"
-        },
-        {
-            "name": "graham-campbell/contact",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/BootstrapCMS/Contact.git",
-                "reference": "299cc7f8a724348406a030ca138d9e25b49c4337"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/BootstrapCMS/Contact/zipball/299cc7f8a724348406a030ca138d9e25b49c4337",
-                "reference": "299cc7f8a724348406a030ca138d9e25b49c4337",
-                "shasum": ""
-            },
-            "require": {
-                "graham-campbell/binput": "~3.0",
-                "graham-campbell/throttle": "~4.0",
-                "illuminate/contracts": "5.1.*",
-                "illuminate/mail": "5.1.*",
-                "illuminate/routing": "5.1.*",
-                "illuminate/support": "5.1.*",
-                "illuminate/validation": "5.1.*",
-                "illuminate/view": "5.1.*",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "~3.0",
-                "phpunit/phpunit": "^4.7.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\Contact\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                }
-            ],
-            "description": "Contact Is A Contact Form Backend For Laravel 5",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Laravel Contact",
-                "Laravel-Contact",
-                "contact",
-                "contact form",
-                "form",
-                "framework",
-                "laravel"
-            ],
-            "time": "2015-08-10 21:00:05"
         },
         {
             "name": "graham-campbell/credentials",

@@ -21,7 +21,6 @@
     "fideloper/proxy": "~3.0",
     "league/commonmark": "0.10.*",
     "mrclay/minify": "^2.2",
-    "graham-campbell/contact": "~1.0",
     "graham-campbell/credentials": "~1.0",
     "graham-campbell/exceptions": "~4.0",
     "graham-campbell/logviewer": "~1.0",

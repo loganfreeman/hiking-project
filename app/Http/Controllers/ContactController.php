@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Contact\Http\Controllers;
+namespace App\Http\Controllers;
 
 use GrahamCampbell\Binput\Facades\Binput;
-use GrahamCampbell\Contact\Facades\Mailer;
+use App\Facades\Mailer;
 use GrahamCampbell\Throttle\Throttlers\ThrottlerInterface;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Redirect;

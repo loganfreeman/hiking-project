@@ -20,6 +20,8 @@
 |
 */
 
+$router->post('contact', ['as' => 'contact.post', 'uses' => 'ContactController@postSubmit']);
+
 // send users to the home page
 $router->get('/', ['as' => 'base', function () {
     Session::flash('', ''); // work around laravel bug if there is no session yet

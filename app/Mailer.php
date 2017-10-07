@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Contact;
+namespace App;
 
 use Illuminate\Contracts\Mail\MailQueue;
 

@@ -9,11 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Contact;
+namespace App\Providers;
 
-use GrahamCampbell\Contact\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use App\Mailer;
 
 /**
  * This is the contact service provider class.
@@ -29,42 +30,10 @@ class ContactServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->setupPackage();
+        $this->loadViewsFrom(realpath(__DIR__.'/../../resources/views/contact'), 'contact');
 
-        $this->setupRoutes($this->app->router);
     }
 
-    /**
-     * Setup the package.
-     *
-     * @return void
-     */
-    protected function setupPackage()
-    {
-        $source = realpath(__DIR__.'/../config/contact.php');
-
-        $this->publishes([$source => config_path('contact.php')]);
-
-        $this->mergeConfigFrom($source, 'contact');
-
-        $this->loadViewsFrom(realpath(__DIR__.'/../views'), 'contact');
-    }
-
-    /**
-     * Setup the routes.
-     *
-     * @param \Illuminate\Routing\Router $router
-     *
-     * @return void
-     */
-    public function setupRoutes(Router $router)
-    {
-        require __DIR__.'/Http/filters.php';
-
-        $router->group(['namespace' => 'GrahamCampbell\Contact\Http\Controllers'], function (Router $router) {
-            require __DIR__.'/Http/routes.php';
-        });
-    }
 
     /**
      * Register the service provider.
