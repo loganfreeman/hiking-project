@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "61da41fea5826cfee6b9c4c9ab7910a3",
-    "content-hash": "60fc05761d13b9d65f5f2d01c8514d82",
+    "hash": "018d1a0fe00e33ecfdac20c409743598",
+    "content-hash": "57576ee1473024140dee0d5d1eff8b4d",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -829,66 +829,6 @@
                 "logviewer"
             ],
             "time": "2016-06-28 09:56:34"
-        },
-        {
-            "name": "graham-campbell/navigation",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/BootstrapCMS/Navigation.git",
-                "reference": "3c6b8d179844e110a183ae985af26cb72693b26e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/BootstrapCMS/Navigation/zipball/3c6b8d179844e110a183ae985af26cb72693b26e",
-                "reference": "3c6b8d179844e110a183ae985af26cb72693b26e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "5.0.*|5.1.*",
-                "illuminate/http": "5.0.*|5.1.*",
-                "illuminate/support": "5.0.*|5.1.*",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "graham-campbell/testbench": "~3.0",
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.7.6"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\Navigation\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                }
-            ],
-            "description": "Navigation Is A Navigation Bar Generator For Laravel 5",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Laravel Navigation",
-                "Laravel-Navigation",
-                "framework",
-                "laravel",
-                "navigation",
-                "navigation bar",
-                "navigation generator"
-            ],
-            "time": "2015-08-10 21:39:10"
         },
         {
             "name": "graham-campbell/security",
