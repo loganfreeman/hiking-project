@@ -12,7 +12,6 @@
 namespace App\Navigation;
 
 use GrahamCampbell\Credentials\Credentials;
-use GrahamCampbell\Navigation\Navigation;
 
 /**
  * This is the navigation factory class.
@@ -31,7 +30,7 @@ class Factory
     /**
      * The navigation instance.
      *
-     * @var \GrahamCampbell\Navigation\Navigation
+     * @var Navigation
      */
     protected $navigation;
 
@@ -60,7 +59,7 @@ class Factory
      * Create a new instance.
      *
      * @param \GrahamCampbell\Credentials\Credentials $credentials
-     * @param \GrahamCampbell\Navigation\Navigation   $navigation
+     * @param Navigation   $navigation
      * @param string                                  $name
      * @param string                                  $property
      * @param bool                                    $inverse
@@ -145,7 +144,7 @@ class Factory
     /**
      * Return the navigation instance.
      *
-     * @return \GrahamCampbell\Navigation\Navigation
+     * @return Navigation
      */
     public function getNavigation()
     {

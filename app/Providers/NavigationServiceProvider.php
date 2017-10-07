@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Navigation;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\Navigation\Navigation;
 /**
  * This is the navigation service provider class.
  *
@@ -27,7 +27,7 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(realpath(__DIR__.'/../views'), 'navigation');
+      $this->loadViewsFrom(realpath(__DIR__.'/../../resources/views'), 'navigation');
     }
 
     /**
@@ -52,7 +52,7 @@ class NavigationServiceProvider extends ServiceProvider
             $events = $app['events'];
             $url = $app['url'];
             $view = $app['view'];
-            $name = 'navigation::bootstrap';
+            $name = 'navigation::navigation';
 
             $navigation = new Navigation($request, $events, $url, $view, $name);
             $app->refresh('request', $navigation, 'setRequest');

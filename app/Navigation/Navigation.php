@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Navigation;
+namespace App\Navigation;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Routing\UrlGenerator;

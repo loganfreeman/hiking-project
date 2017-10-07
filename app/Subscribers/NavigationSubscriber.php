@@ -13,7 +13,7 @@ namespace App\Subscribers;
 
 use App\Repositories\PageRepository;
 use GrahamCampbell\Credentials\Credentials;
-use GrahamCampbell\Navigation\Navigation;
+use App\Navigation\Navigation;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Facades\Log;
 
@@ -27,7 +27,7 @@ class NavigationSubscriber
     /**
      * The navigation instance.
      *
-     * @var \GrahamCampbell\Navigation\Navigation
+     * @var \App\Navigation\Navigation
      */
     protected $navigation;
 
@@ -69,7 +69,7 @@ class NavigationSubscriber
     /**
      * Create a new instance.
      *
-     * @param \GrahamCampbell\Navigation\Navigation                    $navigation
+     * @param \App\Navigation\Navigation                    $navigation
      * @param \GrahamCampbell\Credentials\Credentials                  $credentials
      * @param \App\Repositories\PageRepository $pagerepository
      * @param bool                                                     $blogging
@@ -327,7 +327,7 @@ class NavigationSubscriber
     /**
      * Get the navigation instance.
      *
-     * @return \GrahamCampbell\Navigation\Navigation
+     * @return \App\Navigation\Navigation
      */
     public function getNavigation()
     {

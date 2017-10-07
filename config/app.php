@@ -177,7 +177,7 @@ return [
         'GrahamCampbell\Binput\BinputServiceProvider',
         'GrahamCampbell\Throttle\ThrottleServiceProvider',
         'GrahamCampbell\Credentials\CredentialsServiceProvider',
-        'GrahamCampbell\Navigation\NavigationServiceProvider',
+        'App\Providers\NavigationServiceProvider',
         'GrahamCampbell\Contact\ContactServiceProvider',
         'GrahamCampbell\LogViewer\LogViewerServiceProvider',
         'App\Providers\AppServiceProvider',

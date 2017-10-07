@@ -52,8 +52,7 @@
       "GrahamCampbell\\Core\\": "graham-campbell/core/src",
       "GrahamCampbell\\HTMLMin\\": "graham-campbell/htmlmin/src",
       "GrahamCampbell\\Binput\\": "graham-campbell/binput/src",
-      "GrahamCampbell\\Markdown\\": "graham-campbell/markdown/src",
-      "GrahamCampbell\\Navigation\\": "graham-campbell/navigation/src"
+      "GrahamCampbell\\Markdown\\": "graham-campbell/markdown/src"
     }
   },
   "autoload-dev": {
