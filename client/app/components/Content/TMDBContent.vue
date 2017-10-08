@@ -60,21 +60,21 @@
         const tmdbID = this.$route.query.for;
         const type = this.$route.query.type;
 
-        http(`${config.api}/suggestions/${tmdbID}/${type}`).then(value => {
+        http(`${config.api}/movies/suggestions/${tmdbID}/${type}`).then(value => {
           this.items = value.data;
           this.SET_LOADING(false);
         });
       },
 
       initTrending() {
-        http(`${config.api}/trending`).then(value => {
+        http(`${config.api}/movies/trending`).then(value => {
           this.items = value.data;
           this.SET_LOADING(false);
         });
       },
 
       initUpcoming() {
-        http(`${config.api}/upcoming`).then(value => {
+        http(`${config.api}/movies/upcoming`).then(value => {
           this.items = value.data;
           this.SET_LOADING(false);
         });

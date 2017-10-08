@@ -57,6 +57,22 @@ return [
             'root'   => storage_path('app'),
         ],
 
+        'languages' => [
+          'driver' => 'local',
+          'root' => base_path('client/resources/languages'),
+        ],
+
+        'export' => [
+          'driver' => 'local',
+          'root' => base_path('public/exports'),
+        ],
+
+        'public' => [
+          'driver' => 'local',
+          'root' => storage_path('app/public'),
+          'visibility' => 'public',
+        ],
+
         'ftp' => [
             'driver'   => 'ftp',
             'host'     => 'ftp.example.com',

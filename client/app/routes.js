@@ -11,7 +11,7 @@ import TMDBContent from './components/Content/TMDBContent.vue';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  //mode: 'history',
   base: config.uri,
   routes: [
     { path: '/', component: Content, name: 'home' },

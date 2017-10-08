@@ -636,7 +636,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Header.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Header.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -647,9 +647,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-77216462", __vue_options__)
+	    hotAPI.createRecord("data-v-0ff74eca", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-77216462", __vue_options__)
+	    hotAPI.reload("data-v-0ff74eca", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Header.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -1555,19 +1555,7 @@ webpackJsonp([0],[
 	module.exports={render:function (){var _vm=this;
 	  return _vm._h('header', [_vm._h('div', {
 	    staticClass: "wrap"
-	  }, [_vm._h('router-link', {
-	    staticClass: "logo",
-	    attrs: {
-	      "to": "/"
-	    }
-	  }, [_vm._h('img', {
-	    attrs: {
-	      "src": __webpack_require__(102),
-	      "alt": "Flox",
-	      "width": "108",
-	      "height": "32"
-	    }
-	  })]), " ", _vm._h('span', {
+	  }, [_vm._m(0), " ", _vm._h('span', {
 	    staticClass: "sort-wrap"
 	  }, [_vm._h('i', {
 	    staticClass: "icon-sort-time",
@@ -1626,11 +1614,25 @@ webpackJsonp([0],[
 	      "to": "/movies"
 	    }
 	  }, [_vm._s(_vm.lang('movies'))])])])])])
-	},staticRenderFns: []}
+	},staticRenderFns: [function (){var _vm=this;
+	  return _vm._h('a', {
+	    staticClass: "logo",
+	    attrs: {
+	      "href": "/"
+	    }
+	  }, [_vm._h('img', {
+	    attrs: {
+	      "src": __webpack_require__(102),
+	      "alt": "Flox",
+	      "width": "108",
+	      "height": "32"
+	    }
+	  })])
+	}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-77216462", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-0ff74eca", module.exports)
 	  }
 	}
 
@@ -1663,7 +1665,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Search.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Search.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -1674,9 +1676,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2437cb6a", __vue_options__)
+	    hotAPI.createRecord("data-v-6fbfcc65", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-2437cb6a", __vue_options__)
+	    hotAPI.reload("data-v-6fbfcc65", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Search.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -1815,7 +1817,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-2437cb6a", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-6fbfcc65", module.exports)
 	  }
 	}
 
@@ -1842,7 +1844,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Footer.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Footer.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -1853,9 +1855,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-b9862c46", __vue_options__)
+	    hotAPI.createRecord("data-v-22762a50", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-b9862c46", __vue_options__)
+	    hotAPI.reload("data-v-22762a50", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Footer.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -1958,7 +1960,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-b9862c46", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-22762a50", module.exports)
 	  }
 	}
 
@@ -1985,7 +1987,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Login.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Login.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -1996,9 +1998,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-756f1dd2", __vue_options__)
+	    hotAPI.createRecord("data-v-228ee4bc", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-756f1dd2", __vue_options__)
+	    hotAPI.reload("data-v-228ee4bc", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Login.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -2145,7 +2147,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-756f1dd2", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-228ee4bc", module.exports)
 	  }
 	}
 
@@ -2178,7 +2180,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Modal/Index.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Modal/Index.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2189,9 +2191,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7b4d1f04", __vue_options__)
+	    hotAPI.createRecord("data-v-1821d463", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7b4d1f04", __vue_options__)
+	    hotAPI.reload("data-v-1821d463", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Index.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -2258,7 +2260,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Modal/Season.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Modal/Season.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -2269,9 +2271,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7e486867", __vue_options__)
+	    hotAPI.createRecord("data-v-3ce6fdbc", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7e486867", __vue_options__)
+	    hotAPI.reload("data-v-3ce6fdbc", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Season.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -2593,7 +2595,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7e486867", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-3ce6fdbc", module.exports)
 	  }
 	}
 
@@ -2621,7 +2623,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7b4d1f04", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-1821d463", module.exports)
 	  }
 	}
 
@@ -2668,7 +2670,6 @@ webpackJsonp([0],[
 	_vue2.default.use(_vueRouter2.default);
 
 	exports.default = new _vueRouter2.default({
-	  mode: 'history',
 	  base: _config2.default.uri,
 	  routes: [{ path: '/', component: _Content2.default, name: 'home' }, { path: '/movies', component: _Content2.default, name: 'movie' }, { path: '/tv', component: _Content2.default, name: 'tv' }, { path: '/search', component: _SearchContent2.default, name: 'search' }, { path: '/settings', component: _Settings2.default, name: 'settings' }, { path: '/suggestions', component: _TMDBContent2.default, name: 'suggestions' }, { path: '/trending', component: _TMDBContent2.default, name: 'trending' }, { path: '/upcoming', component: _TMDBContent2.default, name: 'upcoming' }, { path: '*', component: _Content2.default }]
 	});
@@ -4724,7 +4725,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Content/Content.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Content/Content.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -4735,9 +4736,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-a294141e", __vue_options__)
+	    hotAPI.createRecord("data-v-602fdf56", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-a294141e", __vue_options__)
+	    hotAPI.reload("data-v-602fdf56", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Content.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -4864,7 +4865,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Content/Item.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Content/Item.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -4875,9 +4876,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-411934cb", __vue_options__)
+	    hotAPI.createRecord("data-v-b74564f4", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-411934cb", __vue_options__)
+	    hotAPI.reload("data-v-b74564f4", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Item.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -5144,7 +5145,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-411934cb", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-b74564f4", module.exports)
 	  }
 	}
 
@@ -5184,7 +5185,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-a294141e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-602fdf56", module.exports)
 	  }
 	}
 
@@ -5211,7 +5212,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Content/SearchContent.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Content/SearchContent.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -5222,9 +5223,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-514c9729", __vue_options__)
+	    hotAPI.createRecord("data-v-a26dbe64", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-514c9729", __vue_options__)
+	    hotAPI.reload("data-v-a26dbe64", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] SearchContent.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -6744,7 +6745,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-514c9729", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-a26dbe64", module.exports)
 	  }
 	}
 
@@ -6771,7 +6772,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Content/Settings.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Content/Settings.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -6782,9 +6783,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-18ee1ddb", __vue_options__)
+	    hotAPI.createRecord("data-v-d29d3dd4", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-18ee1ddb", __vue_options__)
+	    hotAPI.reload("data-v-d29d3dd4", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Settings.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -7225,7 +7226,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-18ee1ddb", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-d29d3dd4", module.exports)
 	  }
 	}
 
@@ -7252,7 +7253,7 @@ webpackJsonp([0],[
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Volumes/HD2/projects/www/sites/best-name/client/app/components/Content/TMDBContent.vue"
+	__vue_options__.__file = "/Users/scheng/www/sites/hidden-valley-blog/client/app/components/Content/TMDBContent.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -7263,9 +7264,9 @@ webpackJsonp([0],[
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-8d19d64c", __vue_options__)
+	    hotAPI.createRecord("data-v-41407882", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-8d19d64c", __vue_options__)
+	    hotAPI.reload("data-v-41407882", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] TMDBContent.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -7341,7 +7342,7 @@ webpackJsonp([0],[
 	      var tmdbID = this.$route.query.for;
 	      var type = this.$route.query.type;
 
-	      (0, _axios2.default)(config.api + '/suggestions/' + tmdbID + '/' + type).then(function (value) {
+	      (0, _axios2.default)(config.api + '/movies/suggestions/' + tmdbID + '/' + type).then(function (value) {
 	        _this.items = value.data;
 	        _this.SET_LOADING(false);
 	      });
@@ -7349,7 +7350,7 @@ webpackJsonp([0],[
 	    initTrending: function initTrending() {
 	      var _this2 = this;
 
-	      (0, _axios2.default)(config.api + '/trending').then(function (value) {
+	      (0, _axios2.default)(config.api + '/movies/trending').then(function (value) {
 	        _this2.items = value.data;
 	        _this2.SET_LOADING(false);
 	      });
@@ -7357,7 +7358,7 @@ webpackJsonp([0],[
 	    initUpcoming: function initUpcoming() {
 	      var _this3 = this;
 
-	      (0, _axios2.default)(config.api + '/upcoming').then(function (value) {
+	      (0, _axios2.default)(config.api + '/movies/upcoming').then(function (value) {
 	        _this3.items = value.data;
 	        _this3.SET_LOADING(false);
 	      });
@@ -7399,7 +7400,7 @@ webpackJsonp([0],[
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-8d19d64c", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-41407882", module.exports)
 	  }
 	}
 

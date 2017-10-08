@@ -1,9 +1,9 @@
 <template>
   <header>
     <div class="wrap">
-      <router-link to="/" class="logo" >
+      <a href="/" class="logo" >
         <img src="../../../public/assets/img/logo.png" alt="Flox" width="108" height="32">
-      </router-link>
+      </a>
 
       <span class="sort-wrap">
         <i :title="lang('last seen')" class="icon-sort-time" :class="{active: userFilter == 'created_at'}" @click="setUserFilter('created_at')"></i>

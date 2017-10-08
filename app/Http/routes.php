@@ -1,5 +1,5 @@
 <?php
-
+use App\Services\Storage;
 /*
  * This file is part of Bootstrap CMS.
  *
@@ -29,6 +29,12 @@ $router->get('/', ['as' => 'base', function () {
 
     return Redirect::to('blog/posts');
 }]);
+
+$router->get('/movies', ['as' => 'movies', function () {
+    //return Redirect::to('blog/posts');
+    return View::make('welcome', ["lang" => Storage::parseLanguage()]);
+}]);
+
 
 // send users to the posts page
 if (Config::get('cms.blogging')) {
@@ -68,9 +74,13 @@ if (Config::get('cms.events')) {
     $router->get('event/{id}/isSignupedbyme', ['as' => 'isSignupedbyme', 'uses' => 'EventController@isSignupedbyme']);
 }
 
-$router->get('movies', ['uses' => 'MoviesController@index']);
+//$router->get('movies', ['uses' => 'MoviesController@index']);
 
 $router->get('api/movies/suggestions/{tmdbID}/{mediaType}', ['uses' => 'TMDBController@suggestions']);
 $router->get('api/movies/trending', ['uses' => 'TMDBController@trending']);
 $router->get('api/movies/upcoming', ['uses' => 'TMDBController@upcoming']);
 $router->get('api/movies/search', ['uses' => 'TMDBController@search']);
+
+$router->get('api/items/{type}/{orderBy}', 'ItemController@items');
+$router->get('api/search-items', 'ItemController@search');
+$router->get('api/settings', ['uses' => 'SettingController@settings']);
